@@ -19,11 +19,18 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   totalParts: number
-  remainingParts: number
+  giftedParts: number | null
   partPrice: number
 }>()
 
 const totalPrice = computed(() => props.totalParts * props.partPrice)
+
+const remainingParts = computed(() => {
+  if (!props.giftedParts) {
+    return props.totalParts
+  }
+  return props.totalParts - props.giftedParts
+})
 
 const partsRemainingMessage = computed(() => {
   return props.remainingParts > 1 ? 'parts' : 'part'

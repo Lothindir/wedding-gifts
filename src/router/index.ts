@@ -8,6 +8,16 @@ const router = createRouter({
       path: '/',
       name: 'gifts',
       component: GiftsView
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('@/views/AdminView.vue')
+    },
+    {
+      path: '/admin/gifts',
+      name: 'admin-gifts',
+      component: () => import('@/views/admin/AdminGiftsView.vue')
     }
   ]
 })

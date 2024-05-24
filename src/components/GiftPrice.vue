@@ -6,16 +6,25 @@
     </div>
     <div>
       <p class="text-sm font-medium text-gray-700">{{ totalPrice }}CHF</p>
-      <p class="text-sm italic font-medium text-gray-500">{{ remainingPrice }}CHF</p>
+      <p class="text-sm italic font-medium text-gray-500">{{ remainingAmount }}CHF</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+
+const props = defineProps<{
   totalPrice: number
-  remainingPrice: number
+  giftedAmount: number | null
 }>()
+
+const remainingAmount = computed(() => {
+  if (!props.giftedAmount) {
+    return props.totalPrice
+  }
+  return props.totalPrice - props.giftedAmount
+})
 </script>
 
 <style></style>

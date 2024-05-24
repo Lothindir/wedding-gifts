@@ -4,7 +4,7 @@
       class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
     >
       <img
-        src="https://picsum.photos/275/320"
+        :src=img
         class="h-full w-full object-cover object-center lg:h-full lg:w-full"
       />
     </div>
@@ -28,8 +28,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  title: string
-  description: string
-}>()
+defineProps({
+  title: String,
+  description: String,
+  img: {
+    type: String,
+    default() {
+      return 'https://picsum.photos/275/320'
+    } 
+  }
+})
 </script>
