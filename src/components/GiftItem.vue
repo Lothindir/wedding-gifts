@@ -3,10 +3,7 @@
     <div
       class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
     >
-      <img
-        :src=img
-        class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-      />
+      <img :src="img" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
     </div>
     <div class="mt-4 flex justify-between">
       <div>
@@ -35,7 +32,7 @@ defineProps({
     type: String,
     default() {
       return 'https://picsum.photos/275/320'
-    } 
-  }
+    },
+  },
 })
 </script>

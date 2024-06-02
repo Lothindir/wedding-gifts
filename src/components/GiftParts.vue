@@ -2,20 +2,27 @@
   <div class="mt-4 flex justify-between">
     <div class="flex flex-col grow justify-center">
       <p class="text-sm font-medium text-center text-gray-700">
-        {{ totalParts }}x <span class="font-bold">{{ partPrice }}CHF</span>
+        {{ totalParts }}x
+        <span class="font-bold">{{ partPrice }} {{ settingsStore.currency }}</span>
       </p>
-      <p class="text-sm font-medium italic text-center text-gray-500">{{ totalPrice }}CHF</p>
+      <p class="text-sm font-medium italic text-center text-gray-500">
+        {{ totalPrice }} {{ settingsStore.currency }}
+      </p>
     </div>
     <div class="border-r border-gray-500"></div>
     <div class="flex flex-col grow justify-items-center">
       <p class="text-md font-medium font-bold text-center text-teal-700">{{ remainingParts }}</p>
-      <p class="text-sm font-medium text-center text-gray-700">{{ partsRemainingMessage }}</p>
+      <p class="text-sm font-medium text-center text-gray-700">
+        {{ t('gift.part', remainingParts) }}
+      </p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useSettingsStore } from '@/stores/settings'
 
 const props = defineProps<{
   totalParts: number
@@ -24,6 +31,8 @@ const props = defineProps<{
 }>()
 
 const totalPrice = computed(() => props.totalParts * props.partPrice)
+const { t } = useI18n()
+const settingsStore = useSettingsStore()
 
 const remainingParts = computed(() => {
   if (!props.giftedParts) {
@@ -33,7 +42,7 @@ const remainingParts = computed(() => {
 })
 
 const partsRemainingMessage = computed(() => {
-  return props.remainingParts > 1 ? 'parts' : 'part'
+  return props.remainingParts == 1 ? t('gift.part') : 'parts'
 })
 </script>
 

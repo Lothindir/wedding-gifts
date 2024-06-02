@@ -1,0 +1,23 @@
+{
+  "wedding": {
+    "title": "Mariage",
+    "lower_title": "mariage",
+    "gift_list": "Liste de cadeaux",
+    "gift_list_description": "Nous avons créé une liste de cadeaux pour notre mariage. Vous pouvez contribuer à l'un des cadeaux ci-dessous."
+  },
+  "gift": {
+    "total": "Total",
+    "remaining": "Restant",
+    "part": "pièce | pièces",
+    "contribute": "Contribuer"
+  },
+  "admin": {
+    "image": "Image",
+    "title": "Titre",
+    "description": "Description",
+    "price": "Prix",
+    "parts": "Pièces",
+    "edit": "Modifier",
+    "add": "Ajouter cadeau"
+  }
+}

@@ -2,15 +2,11 @@
   <div class="bg-gray-300 h-screen w-full p-4">
     <h2 class="text-4xl my-4 font-medium text-gray-900">Actions</h2>
     <ul role="list" class="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-      <li
-        v-for="action in actions"
-        :key="action.name"
-        class="col-span-1 flex rounded-md shadow-sm"
-      >
+      <li v-for="action in actions" :key="action.name" class="col-span-1 flex rounded-md shadow-sm">
         <div
           :class="[
             action.bgColor,
-            'flex w-16 flex-shrink-0 items-center justify-center rounded-l-md text-sm font-medium text-white'
+            'flex w-16 flex-shrink-0 items-center justify-center rounded-l-md text-sm font-medium text-white',
           ]"
         >
           {{ action.initials }}
@@ -22,7 +18,6 @@
             <a :href="action.href" class="font-medium text-gray-900 hover:text-gray-600">{{
               action.name
             }}</a>
-
           </div>
           <div class="flex-shrink-0 pr-2">
             <button
@@ -40,13 +35,13 @@
 </template>
 
 <script setup lang="ts">
-import { supabase } from '@/utils/supabase'
+import { supabase } from '@/database/supabase'
 import { EllipsisVerticalIcon } from '@heroicons/vue/20/solid'
 
 const actions = [
   { name: 'View all gifts', initials: 'G', href: '/admin/gifts', bgColor: 'bg-pink-600' },
   { name: 'View donors', initials: 'D', href: '#', bgColor: 'bg-purple-600' },
   { name: 'View transactions', initials: 'T', href: '#', bgColor: 'bg-yellow-500' },
-  { name: 'View users', initials: 'U', href: '#', bgColor: 'bg-blue-600' }
+  { name: 'View users', initials: 'U', href: '#', bgColor: 'bg-blue-600' },
 ]
 </script>

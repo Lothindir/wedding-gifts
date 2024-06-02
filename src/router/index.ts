@@ -7,19 +7,30 @@ const router = createRouter({
     {
       path: '/',
       name: 'gifts',
-      component: GiftsView
+      component: GiftsView,
     },
     {
       path: '/admin',
       name: 'admin',
-      component: () => import('@/views/AdminView.vue')
+      component: () => import('@/views/AdminView.vue'),
     },
     {
       path: '/admin/gifts',
       name: 'admin-gifts',
-      component: () => import('@/views/admin/AdminGiftsView.vue')
-    }
-  ]
+      component: () => import('@/views/admin/AdminGiftsView.vue'),
+    },
+    {
+      path: '/admin/gifts/:id',
+      name: 'admin-edit-gift',
+      component: () => import('@/views/admin/AdminEditGiftView.vue'),
+      props: true,
+    },
+    {
+      path: '/admin/gifts/add',
+      name: 'admin-add-gift',
+      component: () => import('@/views/admin/AdminAddGiftView.vue'),
+    },
+  ],
 })
 
 export default router
