@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <!--<form>
     <div class="space-y-12 bg-white p-8 h-full">
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
         <div>
@@ -65,29 +65,6 @@
             </div>
           </fieldset>
 
-          <!-- <div class="col-span-full">
-            <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900"
-              >Cover photo</label
-            >
-            <div
-              class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10"
-            >
-              <div class="text-center">
-                <PhotoIcon class="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
-                <div class="mt-4 flex text-sm leading-6 text-gray-600">
-                  <label
-                    for="file-upload"
-                    class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                  >
-                    <span>Upload a file</span>
-                    <input id="file-upload" name="file-upload" type="file" class="sr-only" accept=".png, .jpg, .jpeg, .gif" />
-                  </label>
-                  <p class="pl-1">or drag and drop</p>
-                </div>
-                <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
 
@@ -131,28 +108,32 @@
     </div>
     <CriticalDialog v-model="modalOpen" title="Cancel?" message="All changes will be lost" confirm-button="OK"
       cancel-button="No" @confirm="router.push('/admin/gifts')" />
-  </form>
+  </form>-->
+  <GiftForm v-model:gift="gift" v-model:languages="languages" @save="updateGift"
+    @cancel="router.push('/admin/gifts')" />
 </template>
 
 <script setup lang="ts">
 import { useToast } from 'vue-toast-notification'
 import { useRouter } from 'vue-router'
-import { PhotoIcon, UserCircleIcon } from '@heroicons/vue/24/solid'
 import { supabase } from '@/database/supabase'
 import { ref, onMounted } from 'vue'
-import { useSettingsStore } from '@/stores/settings'
 import type { Tables } from '@/database/database.types'
-import CriticalDialog from '@/components/CriticalDialog.vue'
+import GiftForm from '@/components/GiftForm.vue'
 
 const props = defineProps<{
   id: number
 }>()
 
-const gift = ref<Tables<'gifts'>>({})
-const languages = ref({})
-const modalOpen = ref(false)
+const gift = ref<Tables<'gifts'>>({
+  hidden: false,
+  id: 0,
+  image: '',
+  parts: 0,
+  price: 0
+})
+const languages = ref<Tables<'gift_translations'>[]>([])
 
-const settingsStore = useSettingsStore()
 const toast = useToast()
 const router = useRouter()
 

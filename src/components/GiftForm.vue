@@ -3,9 +3,12 @@
     <div class="space-y-12 bg-white p-8 h-full">
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
         <div>
-          <h1 class="text-4xl font-semibold leading-7 text-gray-900">
+          <h1 class="text-4xl font-semibold leading-7 text-gray-900" v-if="languages.length == 0">
             New gift
           </h1>
+          <h2 class="text-base font-semibold leading-7 text-gray-900" v-else>
+            <div class="text-3xl" v-for="l in languages" :key="l.id">{{ l.title }}</div>
+          </h2>
           <h2 class="mt-2 text-base font-semibold leading-7 text-gray-900">
             Generic informations
           </h2>
@@ -44,7 +47,7 @@
           <div class="col-span-full">
             <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">Photo</label>
             <div class="mt-2 flex items-center gap-x-3">
-              <img :src="imageURL" class="h-36 w-36 text-gray-300" aria-hidden="true" />
+              <img :src="gift.image" class="h-36 w-36 text-gray-300" aria-hidden="true" />
               <button type="button" @click="uploadModalOpen = true"
                 class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                 Change
@@ -52,7 +55,7 @@
             </div>
           </div>
 
-          <UploadFileDialog v-model:open="uploadModalOpen" title="Upload a file" @uploaded="(url) => imageURL = url"
+          <UploadFileDialog v-model:open="uploadModalOpen" title="Upload a file" @uploaded="(url) => gift.image = url"
             message="PNG, JPG, GIF up to 10MB" />
 
           <fieldset class="col-span-full">
@@ -160,7 +163,6 @@ const missingLanguages = ref<string[]>([])
 const languageToAdd = ref<string>('')
 const cancelModalOpen = ref(false)
 const uploadModalOpen = ref(false)
-const imageURL = ref('')
 
 const settingsStore = useSettingsStore()
 const toast = useToast()
@@ -172,6 +174,13 @@ const emits = defineEmits<{
 
 /** Add and remove languages **/
 watch(() => settingsStore.languages, () => {
+  if (settingsStore.languages) {
+    missingLanguages.value = settingsStore.languages.filter((l) => !languages.value.find((t) => t.language === l))
+    languageToAdd.value = missingLanguages.value[0]
+  }
+})
+
+watch(() => languages.value, () => {
   if (settingsStore.languages) {
     missingLanguages.value = settingsStore.languages.filter((l) => !languages.value.find((t) => t.language === l))
     languageToAdd.value = missingLanguages.value[0]

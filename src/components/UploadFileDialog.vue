@@ -68,19 +68,40 @@
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">Load from URL
                   </DialogTitle>
-                  <div class="mt-2">
-                    <div class="mt-1">
-                      <input type="text" name="url" id="url" placeholder="https://" v-model="url"
-                        class="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+                  <div class="block text-sm font-medium leading-6 text-gray-900">
+                    <div class=" mt-2 flex rounded-md shadow-sm">
+                      <span
+                        class="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">https://</span>
+                      <input type="text" name="url" id="url" v-model="url"
+                        class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-0 pl-1 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        placeholder="www.example.com" />
                     </div>
                   </div>
                 </div>
               </div>
 
+              <!-- Choose from gallery-->
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4" v-if="activeTab == 2">
+                <ul role="list"
+                  class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+                  <li v-for="img in images" :key="img.id" class="relative">
+                    <div @click="selectGalleryImage(img.id)"
+                      class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+                      <img :src="img.metadata.source" alt=""
+                        class="pointer-events-none object-cover group-hover:opacity-75" />
+                      <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true"
+                        v-if="img.metadata.selected">
+                        <DocumentArrowUpIcon class="h-8 w-8 text-white" aria-hidden="true" />
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
               <div class="relative bottom-0 pt-2 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button type="button"
-                  class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"
-                  @click="save">
+                  class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                  @click="save" :disabled="!canSave">
                   Save
                 </button>
                 <button type="button"
@@ -103,7 +124,7 @@ interface HTMLInputEvent extends Event {
   dataTransfer?: DataTransfer;
 }
 
-import { ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { useI18n } from 'vue-i18n'
 import { useToast } from 'vue-toast-notification';
@@ -116,6 +137,19 @@ const activeTab = ref(0)
 const file = ref<File | null>(null)
 const uploadedFilePath = ref('')
 const url = ref('')
+const images = ref<any[]>([])
+const selectedImageId = ref<string>('')
+
+// Must provide an image before saving
+const canSave = computed(() => {
+  return (activeTab.value == 0 ? !!file.value : !!url.value) || (activeTab.value == 1 ? !!url.value : false) || (activeTab.value == 2 ? !!selectedImageId.value : false)
+})
+
+const tabs = [
+  { name: 'File Upload', icon: DocumentArrowUpIcon, tab: 0 },
+  { name: 'URL', icon: LinkIcon, tab: 1 },
+  { name: 'Gallery', icon: PhotoIcon, tab: 2 }
+]
 
 const props = defineProps<{
   title: string
@@ -184,13 +218,55 @@ function save() {
     } else {
       toast.error('No URL entered')
     }
+  } else if (activeTab.value == 2) {
+    if (selectedImageId.value) {
+      const selectedImage = images.value.find((img) => img.id == selectedImageId.value)
+      if (selectedImage) {
+        emits('uploaded', selectedImage.metadata.source)
+        reset()
+        open.value = false
+      } else {
+        toast.error('No image selected')
+      }
+    }
   }
 }
 
-const tabs = [
-  { name: 'File Upload', icon: DocumentArrowUpIcon, tab: 0 },
-  { name: 'URL', icon: LinkIcon, tab: 1 },
-]
+async function getImages() {
+  // Get images from database
+  const { data, error } = await supabase.storage.from('images').list()
+  if (error) {
+    toast.error('Error fetching images')
+    return
+  }
+  images.value = data.filter((img) => img.name.endsWith('.png') || img.name.endsWith('.jpg') || img.name.endsWith('.jpeg') || img.name.endsWith('.gif'))
+  images.value = images.value.map((img) => {
+    return {
+      ...img,
+      'metadata': {
+        ...img.metadata,
+        'source': supabase.storage.from('images').getPublicUrl(img.name).data.publicUrl,
+        'selected': false
+      }
+    }
+  })
+}
+
+function selectGalleryImage(id: string) {
+  images.value = images.value.map((img) => {
+    if (img.id == id) {
+      img.metadata.selected = !img.metadata.selected
+      if (img.metadata.selected) {
+        selectedImageId.value = id
+      } else {
+        selectedImageId.value = ''
+      }
+    } else {
+      img.metadata.selected = false
+    }
+    return img
+  })
+}
 
 const open = defineModel('open', { default: false })
 
@@ -200,4 +276,8 @@ function reset() {
   url.value = ''
   activeTab.value = 0
 }
+
+onMounted(() => {
+  getImages()
+})
 </script>

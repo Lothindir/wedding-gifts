@@ -86,7 +86,7 @@ const { locale } = useI18n()
 const modalOpen = ref(false)
 const giftToDeleteId = ref(-1)
 
-watch(locale, async () => {
+watch(locale, () => {
   getGifts()
 })
 
@@ -115,7 +115,7 @@ async function deleteGift() {
         toast.error('Error deleting gift: ' + error.message)
       } else {
         gifts.value = gifts.value.filter((gift) => gift.id !== giftToDeleteId.value)
-        // giftToDeleteId.value = -1
+        giftToDeleteId.value = -1
         toast.success('Gift deleted')
       }
     }
