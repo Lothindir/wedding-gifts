@@ -136,8 +136,8 @@
           Cancel
         </button>
         <button type="submit"
-          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          @click.prevent="emits('save')">
+          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
+          @click.prevent="save" :disabled="!canSave">
           Save
         </button>
       </div>
@@ -149,7 +149,7 @@
 
 <script setup lang="ts">
 import { useToast } from 'vue-toast-notification'
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useSettingsStore } from '@/stores/settings'
 import CriticalDialog from '@/components/CriticalDialog.vue'
 import UploadFileDialog from '@/components/UploadFileDialog.vue'
@@ -163,6 +163,7 @@ const missingLanguages = ref<string[]>([])
 const languageToAdd = ref<string>('')
 const cancelModalOpen = ref(false)
 const uploadModalOpen = ref(false)
+const canSave = computed(() => languages.value.length > 0 && languages.value.every((l) => l.title))
 
 const settingsStore = useSettingsStore()
 const toast = useToast()
@@ -204,6 +205,14 @@ function addLanguage() {
 function removeLanguage(language: string) {
   languages.value = languages.value.filter((l) => l.language !== language)
   missingLanguages.value.push(language)
+}
+
+function save() {
+  if (canSave.value) {
+    emits('save')
+  } else {
+    toast.error('At least one language must be added')
+  }
 }
 
 onMounted(() => {

@@ -24,6 +24,11 @@ const toast = useToast()
 const router = useRouter()
 
 async function addGift() {
+  if (languages.value.length === 0) {
+    toast.error('Please add at least one language')
+    return
+  }
+
   delete gift.value.id // Otherwise it's always 0
   const { data, error } = await supabase.from('gifts').insert(gift.value).select().single()
   if (error) {

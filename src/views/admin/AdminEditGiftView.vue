@@ -159,6 +159,11 @@ async function getLanguages() {
 }
 
 async function updateGift() {
+  if (languages.value.length === 0) {
+    toast.error('Please add at least one language')
+    return
+  }
+
   const { error } = await supabase.from('gifts').update(gift.value).eq('id', props.id)
 
   if (error) {
