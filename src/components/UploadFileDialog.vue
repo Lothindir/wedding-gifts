@@ -53,11 +53,11 @@
                         class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                         <span>Upload a file</span>
                         <input id="file-upload" name="file-upload" type="file" class="sr-only"
-                          accept=".png, .jpg, .jpeg, .gif" @change="fileChange" />
+                          accept=".png, .jpg, .jpeg, .gif, .webp" @change="fileChange" />
                       </label>
                       <p class="pl-1">or drag and drop</p>
                     </div>
-                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF, WebP up to 2MB</p>
                   </div>
                   <img v-else :src="url" class="w-16 h16" />
                 </div>
