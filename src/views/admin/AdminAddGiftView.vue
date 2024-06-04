@@ -31,6 +31,7 @@ async function addGift() {
     console.error(error)
   } else {
     for (const l of languages.value) {
+      delete l.id
       if (!l.title) continue
       l.gift = data.id
       await supabase.from('gift_translations').insert(l)
