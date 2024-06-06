@@ -1,0 +1,24 @@
+{
+  "wedding": {
+    "title": "Wedding of",
+    "lower_title": "wedding of",
+    "gift_list": "Wedding list",
+    "gift_list_description": "We created a wedding list to help you choose a gift that will make us happy. You can contribute to any gift below."
+  },
+  "gift": {
+    "total": "Total",
+    "remaining": "Remaining",
+    "part": "piece | pieces",
+    "contribute": "Contribute",
+    "already_contributed": "Already gifed"
+  },
+  "admin": {
+    "image": "Image",
+    "title": "Title",
+    "description": "Description",
+    "price": "Price",
+    "parts": "Pieces",
+    "edit": "Edit",
+    "add": "Add new gift"
+  }
+}
