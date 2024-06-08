@@ -14,10 +14,10 @@
             leave-from="opacity-100 translate-y-0 sm:scale-100"
             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
             <DialogPanel
-              class="relative transform overflow-hidden rounded-lg w-48 h-96 bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              class="relative transform overflow-hidden rounded-lg w-48 h-96 max-h-96 bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
               <DialogTitle as="h3" class="text-2xl font-semibold pt-4 px-4 leading-6 text-gray-900">{{ props.title }}
               </DialogTitle>
-              <div class="px-4">
+              <div class="px-4 relative top-0">
                 <div class="sm:hidden">
                   <label for="tabs" class="sr-only">Select a tab</label>
                   <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
@@ -81,24 +81,26 @@
               </div>
 
               <!-- Choose from gallery-->
-              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4" v-if="activeTab == 2">
-                <ul role="list"
-                  class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-                  <li v-for="img in images" :key="img.id" class="relative">
-                    <div @click="selectGalleryImage(img.id)"
-                      class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-                      <img :src="img.metadata.source" alt=""
-                        class="pointer-events-none object-cover group-hover:opacity-75" />
-                      <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true"
-                        v-if="img.metadata.selected">
-                        <DocumentArrowUpIcon class="h-8 w-8 text-white" aria-hidden="true" />
+              <div class="bg-white px-4 pb-4 pt-5 h-56 sm:p-6 sm:pb-4 overflow-auto" v-if="activeTab == 2">
+                <div>
+                  <ul role="list"
+                    class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 overflow-scroll">
+                    <li v-for="img in images" :key="img.id" class="relative">
+                      <div @click="selectGalleryImage(img.id)"
+                        class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+                        <img :src="img.metadata.source" alt=""
+                          class="pointer-events-none object-cover group-hover:opacity-75" />
+                        <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true"
+                          v-if="img.metadata.selected">
+                          <DocumentArrowUpIcon class="h-8 w-8 text-green-600" aria-hidden="true" />
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="relative bottom-0 pt-2 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <div class="absolute bottom-0 w-full bg-white pt-2 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button type="button"
                   class="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                   @click="save" :disabled="!canSave">
@@ -129,7 +131,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 import { useI18n } from 'vue-i18n'
 import { useToast } from 'vue-toast-notification';
 import { supabase } from '@/database/supabase'
-import { DocumentArrowUpIcon, LinkIcon, PhotoIcon } from '@heroicons/vue/20/solid'
+import { LinkIcon, PhotoIcon } from '@heroicons/vue/20/solid'
+import { DocumentArrowUpIcon } from '@heroicons/vue/24/solid'
 
 const { t } = useI18n()
 const toast = useToast()

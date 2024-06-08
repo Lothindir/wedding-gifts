@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-4 flex justify-between">
+    <div class="mt-4 flex justify-between" v-if="isGiftable">
       <div class="flex flex-col grow justify-center">
         <p class="text-sm font-medium text-center text-gray-700">
           {{ totalParts }}x
@@ -10,7 +10,7 @@
           {{ totalPrice }} {{ settingsStore.currency }}
         </p>
       </div>
-      <div class="border-r border-gray-500"></div>
+      <div class="border-r border-gray-300"></div>
       <div class="flex flex-col grow justify-items-center">
         <p class="text-md font-medium font-bold text-center text-teal-700">{{ remainingParts }}</p>
         <p class="text-sm font-medium text-center text-gray-700">
@@ -18,9 +18,9 @@
         </p>
       </div>
     </div>
-    <hr class="mt-4 bg-black border-1" />
+    <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center">
-      <ContributeButton :active="remainingParts > 0" @contribute="contribute" />
+      <ContributeButton :active="isGiftable" @contribute="contribute" />
     </div>
   </div>
 </template>
@@ -47,6 +47,7 @@ const remainingParts = computed(() => {
   }
   return props.totalParts - props.giftedParts
 })
+const isGiftable = computed(() => remainingParts.value > 0)
 
 function contribute() {
   console.log('contribute')
