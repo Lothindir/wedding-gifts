@@ -3,3 +3,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Variable Fonts */
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("@/assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-named-instance: "Regular";
+  }
+
+  @font-face {
+    font-family: "Monsterrat";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("@/assets/fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+    font-named-instance: "Italic";
+  }
+}
+
+#app {
+  @apply w-full h-full flex flex-col;
+}
