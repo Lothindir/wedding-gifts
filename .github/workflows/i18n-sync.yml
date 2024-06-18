@@ -35,6 +35,8 @@ jobs:
           for file in ${ALL_CHANGED_FILES}; do
             if [[ $file == "src/utils/locales/fr-CH.json" ]]; then
               echo "Importing new terms in POEditor..."
-              curl -X GET https://api.poeditor.com/webhooks/8e03690d21
+              curl -X GET https://api.poeditor.com/webhooks/9a26e7aea4
+            else
+              echo "$file changed..."
             fi
           done
