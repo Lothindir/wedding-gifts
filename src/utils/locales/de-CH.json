@@ -10,7 +10,8 @@
     "remaining": "Remaining",
     "part": "piece | pieces",
     "contribute": "Contribute",
-    "already_contributed": "Already gifed"
+    "already_contributed": "Already gifed",
+    "add_to_cart": "Add to cart"
   },
   "admin": {
     "image": "Image",
