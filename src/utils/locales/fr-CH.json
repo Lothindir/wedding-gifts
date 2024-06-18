@@ -10,7 +10,8 @@
     "remaining": "Restant",
     "part": "pièce | pièces",
     "contribute": "Participer",
-    "already_contributed": "Déjà offert"
+    "already_contributed": "Déjà offert",
+    "add_to_cart": "Ajouter au panier"
   },
   "admin": {
     "image": "Image",

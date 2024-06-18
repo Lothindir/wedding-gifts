@@ -82,8 +82,8 @@
 
                         <div class="mt-6">
                           <button type="submit"
-                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">Add
-                            to bag</button>
+                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">{{
+                            t('gift.add_to_cart') }}</button>
                         </div>
 
                         <p class="absolute left-4 top-4 text-center sm:static sm:mt-6">
@@ -109,12 +109,14 @@ import { Dialog, DialogPanel, RadioGroup, RadioGroupOption, TransitionChild, Tra
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 import { StarIcon } from '@heroicons/vue/20/solid'
 import { useGiftsStore } from '@/stores/gifts'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
   id: number
 }>()
 
 const giftsStore = useGiftsStore()
+const { t } = useI18n()
 
 const gift = computed(() => giftsStore.getGiftById(props.id))
 
