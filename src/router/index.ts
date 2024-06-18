@@ -11,19 +11,20 @@ const router = createRouter({
       component: GiftsView,
     },
     {
-      path: '/:lang',
+      path: '/:lang([a-z]{2})',
       component: GiftsView,
       beforeEnter: (to) => {
         const localeArray = i18n.global.availableLocales.map((l) => l.split('-')[0])
         const futureLocale = to.params.lang.toString()
 
         if (!localeArray.includes(futureLocale)) {
-          i18n.global.locale.value = i18n.global.fallbackLocale.value
+          // i18n.global.locale.value = i18n.global.fallbackLocale.value
+          router.push({ name: 'not-found', params: { pathMatch: 'unknown locale' } })
         } else {
           const localeId = localeArray.findIndex((l) => l == futureLocale)
           i18n.global.locale.value = i18n.global.availableLocales[localeId]
+          router.push('/')
         }
-        router.push('/')
       },
     },
     {
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/admin/gifts/add',
       name: 'admin-add-gift',
       component: () => import('@/views/admin/AdminAddGiftView.vue'),
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@/views/errors/NotFound.vue'),
     },
   ],
 })
