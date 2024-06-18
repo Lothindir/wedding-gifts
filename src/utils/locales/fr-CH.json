@@ -20,5 +20,15 @@
     "parts": "Pièces",
     "edit": "Modifier",
     "add": "Ajouter cadeau"
+  },
+  "errors": {
+    "home": "Accueil",
+    "home-message": "Retour à la page d'accueil",
+    "back": "Retour",
+    "404": {
+      "title": "Page non trouvée",
+      "description": "La page que vous cherchez n'existe pas.",
+      "language": "Le language demandé n'existe pas."
+    }
   }
 }
