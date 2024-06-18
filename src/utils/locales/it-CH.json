@@ -10,7 +10,8 @@
     "remaining": "Rimanente",
     "part": "pezzo | pezzi",
     "contribute": "Contribuire",
-    "already_contributed": "Già regalato"
+    "already_contributed": "Già regalato",
+    "add_to_cart": "Aggiungi al carrello"
   },
   "admin": {
     "image": "Immagine",
