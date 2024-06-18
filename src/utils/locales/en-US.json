@@ -20,5 +20,15 @@
     "parts": "Pieces",
     "edit": "Edit",
     "add": "Add new gift"
+  },
+  "errors": {
+    "home": "Homepage",
+    "home-message": "Back to homepage",
+    "back": "Back",
+    "404": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist.",
+      "language": "The requested language does not exist."
+    }
   }
 }
