@@ -43,5 +43,11 @@ export const useSettingsStore = defineStore('settings', () => {
     loaded.value = true
   }
 
-  return { currency, languages_nb, languages_default, languages, loadSettings }
+  return {
+    currency,
+    languages_nb,
+    languages_default,
+    languages,
+    loadSettings,
+  }
 })

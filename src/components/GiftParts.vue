@@ -20,7 +20,7 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center">
-      <ContributeButton :active="isGiftable" @contribute="contribute" />
+      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" />
     </div>
   </div>
 </template>
@@ -48,10 +48,6 @@ const remainingParts = computed(() => {
   return props.totalParts - props.giftedParts
 })
 const isGiftable = computed(() => remainingParts.value > 0)
-
-function contribute() {
-  console.log('contribute')
-}
 </script>
 
 <style></style>

@@ -14,7 +14,8 @@
 import { useI18n } from 'vue-i18n';
 import { GiftIcon, CheckIcon } from '@heroicons/vue/20/solid';
 
-const props = defineProps<{
+
+defineProps<{
   active: boolean
 }>()
 

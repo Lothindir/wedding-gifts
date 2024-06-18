@@ -14,13 +14,13 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center bottom-0">
-      <ContributeButton :active="isGiftable" @contribute="contribute" />
+      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, watch, ref } from 'vue'
+import { computed } from 'vue'
 import { useSettingsStore } from '@/stores/settings'
 import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia';
@@ -42,9 +42,5 @@ const remainingAmount = computed(() => {
   return props.totalPrice - props.giftedAmount
 })
 const isGiftable = computed(() => remainingAmount.value > 0)
-
-function contribute() {
-  console.log('contribute')
-}
 </script>
 
