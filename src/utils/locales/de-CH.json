@@ -1,35 +1,35 @@
 {
   "wedding": {
-    "title": "Wedding of",
-    "lower_title": "wedding of",
-    "gift_list": "Wedding list",
-    "gift_list_description": "We created a wedding list to help you choose a gift that will make us happy. You can contribute to any gift below."
+    "title": "Hochzeit von",
+    "lower_title": "Hochzeit von",
+    "gift_list": "Geschänksliste",
+    "gift_list_description": "Wir haben für unsere Hochzeit eine Liste erstellt. Ihr könnt zu einem der folgenden Geschenke beitragen."
   },
   "gift": {
     "total": "Total",
-    "remaining": "Remaining",
-    "part": "piece | pieces",
-    "contribute": "Contribute",
-    "already_contributed": "Already gifed",
-    "add_to_cart": "Add to cart"
+    "remaining": "Übrig",
+    "part": "Stück | Stücke",
+    "contribute": "Beitragen",
+    "already_contributed": "Schon geschenkt",
+    "add_to_cart": "Zum Korb hinzufügen"
   },
   "admin": {
-    "image": "Image",
-    "title": "Title",
-    "description": "Description",
-    "price": "Price",
-    "parts": "Pieces",
-    "edit": "Edit",
-    "add": "Add new gift"
+    "image": "Bild",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "price": "Preis",
+    "parts": "Stück",
+    "edit": "Ändern",
+    "add": "Geschenk hinzufügen"
   },
   "errors": {
-    "home": "Homepage",
-    "home-message": "Back to homepage",
-    "back": "Back",
+    "home": "Startseite",
+    "home-message": "Zurück zur Startseite",
+    "back": "Zurück",
     "404": {
-      "title": "Page not found",
-      "description": "The page you are looking for does not exist.",
-      "language": "The requested language does not exist."
+      "title": "Seite nicht gefunden",
+      "description": "Die Seite die sie suchen existiert nicht.",
+      "language": "Diese Sprache existiert nicht."
     }
   }
 }
