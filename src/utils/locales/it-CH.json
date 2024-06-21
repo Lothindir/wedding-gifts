@@ -10,7 +10,8 @@
     "remaining": "Rimanente",
     "part": "pezzo | pezzi",
     "contribute": "Contribuire",
-    "already_contributed": "Già regalato"
+    "already_contributed": "Già regalato",
+    "add_to_cart": "Aggiungi al carrello"
   },
   "admin": {
     "image": "Immagine",
@@ -20,5 +21,15 @@
     "parts": "Pezzi",
     "edit": "Modifica",
     "add": "Aggiungi regalo"
+  },
+  "errors": {
+    "home": "Homepage",
+    "home-message": "Ritorno alla homepage",
+    "back": "Indietro",
+    "404": {
+      "title": "Pagina non trovata",
+      "description": "La pagina che cercate non esiste.",
+      "language": "La lingua richiesta non esiste."
+    }
   }
 }

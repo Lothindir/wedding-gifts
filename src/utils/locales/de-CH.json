@@ -1,1 +1,35 @@
-{}
+{
+  "wedding": {
+    "title": "Hochzeit von",
+    "lower_title": "Hochzeit von",
+    "gift_list": "Geschänksliste",
+    "gift_list_description": "Wir haben für unsere Hochzeit eine Liste erstellt. Ihr könnt zu einem der folgenden Geschenke beitragen."
+  },
+  "gift": {
+    "total": "Total",
+    "remaining": "Übrig",
+    "part": "Stück | Stücke",
+    "contribute": "Beitragen",
+    "already_contributed": "Schon geschenkt",
+    "add_to_cart": "Zum Korb hinzufügen"
+  },
+  "admin": {
+    "image": "Bild",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "price": "Preis",
+    "parts": "Stück",
+    "edit": "Ändern",
+    "add": "Geschenk hinzufügen"
+  },
+  "errors": {
+    "home": "Startseite",
+    "home-message": "Zurück zur Startseite",
+    "back": "Zurück",
+    "404": {
+      "title": "Seite nicht gefunden",
+      "description": "Die Seite die sie suchen existiert nicht.",
+      "language": "Diese Sprache existiert nicht."
+    }
+  }
+}
