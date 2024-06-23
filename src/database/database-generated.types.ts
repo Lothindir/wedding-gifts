@@ -67,39 +67,45 @@ export type Database = {
             foreignKeyName: "gift_translations_gift_fkey"
             columns: ["gift"]
             isOneToOne: false
-            referencedRelation: "gifts"
+            referencedRelation: "all_translations"
             referencedColumns: ["id"]
           },
           {
             foreignKeyName: "gift_translations_gift_fkey"
             columns: ["gift"]
             isOneToOne: false
-            referencedRelation: "gifts_visible"
+            referencedRelation: "gifts"
             referencedColumns: ["id"]
           },
         ]
       }
       gifts: {
         Row: {
+          description: string | null
           hidden: boolean
           id: number
           image: string
           parts: number
           price: number
+          title: string | null
         }
         Insert: {
+          description?: string | null
           hidden?: boolean
           id?: number
           image?: string
           parts?: number
           price: number
+          title?: string | null
         }
         Update: {
+          description?: string | null
           hidden?: boolean
           id?: number
           image?: string
           parts?: number
           price?: number
+          title?: string | null
         }
         Relationships: []
       }
@@ -162,14 +168,14 @@ export type Database = {
             foreignKeyName: "transactions_gift_fkey"
             columns: ["gift"]
             isOneToOne: false
-            referencedRelation: "gifts"
+            referencedRelation: "all_translations"
             referencedColumns: ["id"]
           },
           {
             foreignKeyName: "transactions_gift_fkey"
             columns: ["gift"]
             isOneToOne: false
-            referencedRelation: "gifts_visible"
+            referencedRelation: "gifts"
             referencedColumns: ["id"]
           },
         ]
@@ -180,19 +186,20 @@ export type Database = {
         Row: {
           amount_gifted: number | null
           description: string | null
+          hidden: boolean | null
           id: number | null
           image: string | null
-          language: string | null
           parts: number | null
           price: number | null
           title: string | null
         }
         Relationships: []
       }
-      gifts_visible: {
+      all_translations: {
         Row: {
           amount_gifted: number | null
           description: string | null
+          hidden: boolean | null
           id: number | null
           image: string | null
           language: string | null
@@ -601,3 +608,4 @@ export type Enums<
   : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
     ? PublicSchema["Enums"][PublicEnumNameOrOptions]
     : never
+

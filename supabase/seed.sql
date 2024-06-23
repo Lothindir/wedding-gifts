@@ -5,7 +5,7 @@ SET session_replication_role = replica;
 --
 
 -- Dumped from database version 15.1 (Ubuntu 15.1-1.pgdg20.04+1)
--- Dumped by pg_dump version 15.6 (Ubuntu 15.6-1.pgdg20.04+1)
+-- Dumped by pg_dump version 15.7 (Ubuntu 15.7-1.pgdg20.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -127,44 +127,53 @@ INSERT INTO "public"."donors" ("id", "name", "surname", "address", "email") VALU
 --
 
 INSERT INTO "public"."gifts" ("id", "price", "parts", "image", "hidden") VALUES
-	(40, 50, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.3073494298498419.png', false),
-	(41, 100, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.3399865164006908.png', false),
-	(43, 150, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.8741549048738307.png', false),
-	(45, 20, 4, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.21228445662193685.webp', false),
+	(40, 50, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.3073494298498419.png', false),
+	(43, 150, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.8741549048738307.png', false),
+	(45, 20, 4, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.21228445662193685.webp', false),
 	(1, 50, 0, 'https://picsum.photos/275/320', false),
-	(44, 120, 2, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.9295340499855826.webp', false),
-	(46, 600, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.31451949155556225.png', false),
-	(47, 160, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.7468145179556387.webp', false),
-	(48, 40, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.7677857091774453.webp', false),
-	(49, 55, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.7269363572853516.webp', false),
-	(50, 150, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.8303413278758849.png', false),
-	(51, 50, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.8110632498099748.png', false),
-	(52, 60, 2, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.6297698112674929.webp', false),
-	(53, 200, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.7107146061425804.webp', false),
-	(10, 20, 8, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.32559991386649634.jpg', false),
-	(15, 20, 8, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.10175646643416159.jpg', false),
-	(16, 20, 8, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.5937627304626394.jpg', false),
-	(17, 20, 8, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.999850538822654.jpg', false),
-	(18, 100, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.2964452084960215.jpg', false),
-	(19, 50, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.009754711681514094.jpg', false),
-	(20, 100, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.6844673256018328.jpg', true),
-	(21, 100, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.34015848115417135.jpg', true),
-	(22, 300, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.737610104438109.jpg', false),
-	(23, 300, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.13838221730410039.jpg', false),
-	(24, 50, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.49638277599656777.jpg', false),
-	(25, 20, 2, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.1801682516687816.jpg', false),
-	(26, 20, 2, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.1801682516687816.jpg', false),
-	(27, 60, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.11067181579398999.jpg', true),
-	(28, 40, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.4467027003100461.png', true),
-	(29, 30, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.7203176015516778.jpg', false),
-	(30, 280, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.011469754458064307.jpg', false),
-	(31, 80, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.32080570885601556.png', false),
-	(32, 120, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.6800251497523152.png', false),
-	(33, 300, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.3928930813091033.jpg', false),
-	(34, 150, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.21383533302049107.jpg', false),
-	(35, 50, 2, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.9873214350936317.png', false),
-	(36, 125, 0, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.5965447244958315.png', false),
-	(38, 40, 2, 'http://127.0.0.1:54321/storage/v1/object/public/images/0.17373995114866325.png', false);
+	(44, 120, 2, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.9295340499855826.webp', false),
+	(47, 160, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.7468145179556387.webp', false),
+	(48, 40, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.7677857091774453.webp', false),
+	(49, 55, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.7269363572853516.webp', false),
+	(50, 150, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.8303413278758849.png', false),
+	(51, 50, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.8110632498099748.png', false),
+	(52, 60, 2, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.6297698112674929.webp', false),
+	(53, 200, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.7107146061425804.webp', false),
+	(54, 200, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.6932631657860573.jpg', false),
+	(56, 100, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.6232474587304004.webp', false),
+	(59, 70, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.8161259456746982.png', false),
+	(10, 20, 8, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.32559991386649634.jpg', false),
+	(15, 20, 8, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.10175646643416159.jpg', false),
+	(16, 20, 8, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.5937627304626394.jpg', false),
+	(26, 20, 2, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.1801682516687816.jpg', false),
+	(19, 50, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.009754711681514094.jpg', false),
+	(20, 100, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.6844673256018328.jpg', true),
+	(21, 100, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.34015848115417135.jpg', true),
+	(23, 300, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.13838221730410039.jpg', false),
+	(25, 20, 2, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.1801682516687816.jpg', false),
+	(29, 30, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.7203176015516778.jpg', false),
+	(30, 280, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.011469754458064307.jpg', false),
+	(31, 80, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.32080570885601556.png', false),
+	(32, 120, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.6800251497523152.png', false),
+	(33, 300, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.3928930813091033.jpg', false),
+	(24, 50, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.49638277599656777.jpg', false),
+	(35, 50, 2, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.9873214350936317.png', false),
+	(38, 40, 2, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.17373995114866325.png', false),
+	(60, 20, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.4180202588449813.png', false),
+	(61, 100, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.3048832100564298.jpg', false),
+	(62, 100, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.1331839586632727.webp', false),
+	(34, 150, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.21383533302049107.jpg', false),
+	(57, 150, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.9731474928463645.jpg', false),
+	(41, 100, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.3399865164006908.png', false),
+	(17, 20, 8, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.999850538822654.jpg', false),
+	(28, 40, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.4467027003100461.png', true),
+	(18, 100, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.2964452084960215.jpg', false),
+	(58, 50, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.7633219522839799.webp', false),
+	(27, 60, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.11067181579398999.jpg', true),
+	(22, 300, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.737610104438109.jpg', false),
+	(36, 125, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.5965447244958315.png', false),
+	(46, 600, 0, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.31451949155556225.png', false),
+	(55, 150, 1, 'https://udsoxbixxbjjeffsrrgs.supabase.co/storage/v1/object/public/images/0.3566285156957848.webp', false);
 
 
 --
@@ -176,29 +185,17 @@ INSERT INTO "public"."gift_translations" ("id", "language", "title", "descriptio
 	(16, 'de-CH', 'Pasta Teller', 'Damit wir (viel) Pasta essen können', 15),
 	(17, 'fr-CH', 'Bols', 'Quand le souper se résume à un bol de céréales ', 16),
 	(18, 'de-CH', 'Schalen', 'Wenn es zum Z''Nacht nur ein Müsli gibt', 16),
-	(19, 'fr-CH', 'Tassen', 'Pour un grand café, un chocolat chaud, un thé,...', 17),
 	(20, 'de-CH', 'Tassen', 'Für ein grosses Kaffi, eine heisse Schoggi, einen Thé', 17),
-	(21, 'fr-CH', 'Set de verres à vin ', 'pour les apéros', 18),
-	(22, 'de-CH', 'Weingläser set ', 'für alle Apéros ', 18),
+	(36, 'fr-CH', 'Plaque à pizza ', 'Pour les pizzas du samedi soir', 26),
 	(23, 'fr-CH', 'Verres ', 'Utiles tous les jours', 19),
 	(24, 'de-CH', 'Trinkgläser', 'Jeden Tag nützlich ', 19),
 	(25, 'fr-CH', 'Caquelon fondue', 'Pour les soirées d''hiver', 20),
 	(26, 'de-CH', 'Fondue Caquelon', 'Für die Winterabende', 20),
 	(27, 'fr-CH', 'Four à raclette', 'Vive le fromage !', 21),
 	(28, 'de-CH', 'Raclette Öffeli', 'Es lebe der Käse !', 21),
-	(29, 'fr-CH', 'Grill', 'miam, miam', 22),
-	(30, 'de-CH', 'Grill', 'Miam, miam ', 22),
 	(31, 'fr-CH', 'Machine à café ', 'Pour les bon petits et grands café du matin (et de toute la journée)', 23),
 	(32, 'de-CH', 'Kaffemaschine', 'Für alle grossen und kleinen Kaffes', 23),
-	(33, 'fr-CH', 'Grille pain', 'Pour les tartines de pain grillé', 24),
-	(34, 'de-CH', 'Toaster', 'Weil es getoastet besser ist', 24),
 	(35, 'de-CH', 'Pizzablech', 'Für die traditionnelle Samstag Abend Pizza', 25),
-	(36, 'fr-CH', 'Plaque à Pizza ', 'Pour les pizzas du samedi soir', 26),
-	(37, 'de-CH', 'Pizzablech', 'Für die traditionnelle Samstag Abend Pizza', 26),
-	(38, 'fr-CH', 'Four à crêpes', 'Pour les crêpes partys ', 27),
-	(39, 'de-CH', 'Crêpes Öffeli', 'Für alle Crêpes Partys', 27),
-	(40, 'fr-CH', 'Machine à croques-monsieur ', 'Quand on ne sait pas quoi cuisiner', 28),
-	(41, 'de-CH', 'Croques-monsieur Maschine', 'Wenn wir keine Idee haben was zu kochen ', 28),
 	(42, 'fr-CH', 'Bouteille thermos', 'Pour nos sorties dans la neige', 29),
 	(43, 'de-CH', 'Thermosflasche', 'Für unsere Ausflüge in den Schnee', 29),
 	(44, 'fr-CH', 'Commode ', 'Pour ranger les habits qui n''ont pas la place dans l''armoire', 30),
@@ -209,26 +206,20 @@ INSERT INTO "public"."gift_translations" ("id", "language", "title", "descriptio
 	(49, 'de-CH', 'Grosser Spiegel', 'Um zu sehen ob das Outfit passt ', 32),
 	(11, 'fr-CH', 'TEST', 'TEST', 1),
 	(50, 'fr-CH', 'Literie ', 'Pour se retrouver dans de beaux draps ', 33),
-	(51, 'fr-CH', 'Linges de bain ', '', 34),
+	(90, 'de-CH', 'Trekking Rucksack ', 'Für mehrtägige Ausflüge', 57),
 	(52, 'fr-CH', 'Table de chevet', 'Pour stocker tous les livres en cours de lecture', 35),
 	(53, 'de-CH', 'Nachttischli', 'Um alle angefangenen Bücher zu verräumen ', 35),
 	(75, 'fr-CH', 'Plantoir pour balcon', '', 50),
-	(54, 'fr-CH', 'étagère murale', 'pour plus de rangements ', 36),
-	(55, 'de-CH', 'Wandregal', 'Für noch mehr Stauplatz', 36),
 	(12, 'fr-CH', 'Assiettes', '', 10),
 	(56, 'fr-CH', 'Lampe de chevet', '', 38),
 	(57, 'de-CH', 'Nachttischlampe', '', 38),
-	(58, 'fr-CH', 'Foehn ', 'Pour nos brushing quotidiens ', 40),
-	(59, 'de-CH', 'Foehn', 'Für unsere tägliche Brushings ', 40),
-	(60, 'fr-CH', 'Meuble à chaussure', '', 41),
+	(58, 'fr-CH', 'Foehn ', 'Pour nos brushings quotidiens ', 40),
 	(61, 'fr-CH', 'Lampe à pied ', 'Pour qu''on puisse voir ce qu''on mange ', 43),
 	(62, 'de-CH', 'Stehlampe', 'Damit wir sehen können was wir essen, denn "das Auge isst mit"', 43),
 	(65, 'fr-CH', 'Tabourets ', 'Pour pouvoir accueillir plus de monde', 45),
 	(66, 'de-CH', 'Tabouret', 'Damit wir mehr Leute empfangen können', 45),
 	(63, 'fr-CH', 'Tiroirs à bureau', 'Pour que nos bureaux soient toujours bien rangés ', 44),
 	(64, 'de-CH', 'Schreibtischschublade', 'Damit unsere Schreibtische immer gut aufgeräumt bleiben', 44),
-	(67, 'fr-CH', 'Beamer', 'Pour des superbes soirées Films ', 46),
-	(68, 'de-CH', 'Beamer', 'Für super Filmabende', 46),
 	(69, 'fr-CH', 'Canapé balcon', 'Pour chiller dehors ', 47),
 	(70, 'de-CH', 'Balcon Sofa', 'um draussen zu chillen', 47),
 	(71, 'fr-CH', 'Table balcon', 'Pour l''apéro sur le balcon ', 48),
@@ -241,7 +232,43 @@ INSERT INTO "public"."gift_translations" ("id", "language", "title", "descriptio
 	(79, 'fr-CH', 'Plantes', '', 52),
 	(80, 'de-CH', 'Pflanzen', '', 52),
 	(81, 'fr-CH', 'Caisse à outils', '', 53),
-	(82, 'de-CH', 'Werkzeugkiste', '', 53);
+	(82, 'de-CH', 'Werkzeugkiste', '', 53),
+	(83, 'fr-CH', 'Sac de couchage', '', 54),
+	(84, 'de-CH', 'Schlafsack', '', 54),
+	(87, 'fr-CH', 'Set de cuisson à gaz', 'Pour pouvoir manger chaud même lors de nos expéditions camping', 56),
+	(88, 'de-CH', 'Gaskocher set ', 'Damit wir sogar beim Campen warm essen können', 56),
+	(93, 'fr-CH', 'Planche à repasser', '', 59),
+	(94, 'de-CH', 'Bügelbrett', '', 59),
+	(95, 'fr-CH', 'Bac à linge', '', 60),
+	(96, 'de-CH', 'Waschbecken', '', 60),
+	(97, 'fr-CH', 'Pharmacie', 'Pour compléter notre collection de sparadraps ', 61),
+	(98, 'de-CH', 'Apotheke ', 'Damit wir unsere Pflästerli Sammlung ergänzen können', 61),
+	(99, 'fr-CH', 'Wifi', '', 62),
+	(60, 'fr-CH', 'Meuble à chaussures', '', 41),
+	(59, 'de-CH', 'Foehn', 'Für unsere tägliche Brushings ', 40),
+	(33, 'fr-CH', 'Grille-pain', 'Pour les tartines de pain grillé', 24),
+	(34, 'de-CH', 'Toaster', 'Weil es getoastet besser ist', 24),
+	(19, 'fr-CH', 'Tasses', 'Pour un grand café, un chocolat chaud, un thé,...', 17),
+	(37, 'de-CH', 'Pizzablech', 'Für die traditionnelle Samstag Abend Pizza', 26),
+	(40, 'fr-CH', 'Machine à croque-monsieur ', 'Quand on ne sait pas quoi cuisiner', 28),
+	(41, 'de-CH', 'Croque-monsieur Maschine', 'Wenn wir keine Idee haben was zu kochen ', 28),
+	(21, 'fr-CH', 'Set de verres à vin ', 'Pour les apéros', 18),
+	(22, 'de-CH', 'Weingläser set ', 'für alle Apéros ', 18),
+	(91, 'fr-CH', 'Fer à repasser', '', 58),
+	(92, 'de-CH', 'Bügeleisen', '', 58),
+	(86, 'de-CH', 'Campingmatte', '', 55),
+	(38, 'fr-CH', 'Four à crêpes', 'Pour les crêpes parties', 27),
+	(55, 'de-CH', 'Wandregal', 'Für noch mehr Stauplatz', 36),
+	(67, 'fr-CH', 'Beamer', 'Pour des superbes soirées films ', 46),
+	(54, 'fr-CH', 'Étagère murale', 'Pour plus de rangements ', 36),
+	(68, 'de-CH', 'Beamer', 'Für super Filmabende', 46),
+	(85, 'fr-CH', 'Natte de sol ', 'Pour faire du camping ', 55),
+	(39, 'de-CH', 'Crêpes Öffeli', 'Für alle Crêpes Partys', 27),
+	(29, 'fr-CH', 'Grill', 'Miam, miam', 22),
+	(30, 'de-CH', 'Grill', 'Miam, miam ', 22),
+	(100, 'de-CH', 'Wifi', '', 62),
+	(51, 'fr-CH', 'Linges de bain ', '', 34),
+	(89, 'fr-CH', 'Sac à dos trekking', 'Pour nos escapades de plusieurs jours', 57);
 
 
 --
@@ -315,7 +342,16 @@ INSERT INTO "storage"."objects" ("id", "bucket_id", "name", "owner", "created_at
 	('e5e5b291-2b68-4bc5-99b5-ade1ffd7815d', 'images', '0.7269363572853516.webp', NULL, '2024-06-04 14:25:27.702971+00', '2024-06-04 14:25:27.702971+00', '2024-06-04 14:25:27.702971+00', '{"eTag": "\"dfc1a71582947bf17b13d7ebf729358e\"", "size": 42364, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:25:28.000Z", "contentLength": 42364, "httpStatusCode": 200}', '29909543-6de4-4282-8e34-58cdd8045ced', NULL),
 	('e9501527-2740-4a70-bece-f143deaf91c8', 'images', '0.8110632498099748.png', NULL, '2024-06-04 14:33:41.130628+00', '2024-06-04 14:33:41.130628+00', '2024-06-04 14:33:41.130628+00', '{"eTag": "\"2d211dc97c6e35cac47fdfff34fa8364\"", "size": 947191, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:33:41.000Z", "contentLength": 947191, "httpStatusCode": 200}', '860d02ad-0e87-4101-9c15-e11d272ca348', NULL),
 	('b5291824-261d-47e1-9b0e-27d2503a5c55', 'images', '0.6297698112674929.webp', NULL, '2024-06-04 14:36:32.484192+00', '2024-06-04 14:36:32.484192+00', '2024-06-04 14:36:32.484192+00', '{"eTag": "\"c8bbde46e9c042ea20da88243b2628bf\"", "size": 290832, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:36:33.000Z", "contentLength": 290832, "httpStatusCode": 200}', '8518921c-1ede-47ee-a1a0-9d420963ead3', NULL),
-	('6688ec63-35da-40b8-807b-6202ee85baaa', 'images', '0.7107146061425804.webp', NULL, '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '{"eTag": "\"9063d5e96d2b6ceee99ee21b3e47187e\"", "size": 49340, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:42:29.000Z", "contentLength": 49340, "httpStatusCode": 200}', 'd4007411-fb2d-4101-8a92-0d85d1a79dd7', NULL);
+	('6688ec63-35da-40b8-807b-6202ee85baaa', 'images', '0.7107146061425804.webp', NULL, '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '{"eTag": "\"9063d5e96d2b6ceee99ee21b3e47187e\"", "size": 49340, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:42:29.000Z", "contentLength": 49340, "httpStatusCode": 200}', 'd4007411-fb2d-4101-8a92-0d85d1a79dd7', NULL),
+	('14203814-f910-4530-bcdb-31448d2cd5f3', 'images', '0.6932631657860573.jpg', NULL, '2024-06-08 09:35:20.664812+00', '2024-06-08 09:35:20.664812+00', '2024-06-08 09:35:20.664812+00', '{"eTag": "\"10a8e8a6a7e068a95ee934aa3f23a767\"", "size": 57474, "mimetype": "image/jpeg", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T09:35:21.000Z", "contentLength": 57474, "httpStatusCode": 200}', 'da1e5547-d852-4efc-bb12-b96d0ef92adc', NULL),
+	('0cc50537-8255-445c-9087-a84887876a18', 'images', '0.3566285156957848.webp', NULL, '2024-06-08 09:37:16.052307+00', '2024-06-08 09:37:16.052307+00', '2024-06-08 09:37:16.052307+00', '{"eTag": "\"abecfe8fd9b2523810da1d2c4ce8e4b8\"", "size": 16800, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T09:37:17.000Z", "contentLength": 16800, "httpStatusCode": 200}', 'c1bba4cd-16f8-4944-94cf-675837fbc44a', NULL),
+	('07b9dafe-eaa9-4dc6-9445-47370b2785e4', 'images', '0.6232474587304004.webp', NULL, '2024-06-08 09:43:43.258322+00', '2024-06-08 09:43:43.258322+00', '2024-06-08 09:43:43.258322+00', '{"eTag": "\"862c876ac913614a2873040bb8146a33\"", "size": 74142, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T09:43:44.000Z", "contentLength": 74142, "httpStatusCode": 200}', 'a0fe14f1-c16d-4be6-9b14-7a69a4925d57', NULL),
+	('f0d83fac-5151-4573-bf2e-ad83f4c7f385', 'images', '0.9731474928463645.jpg', NULL, '2024-06-08 09:53:20.084917+00', '2024-06-08 09:53:20.084917+00', '2024-06-08 09:53:20.084917+00', '{"eTag": "\"9f3bae47e7b30501b0ab1dadcc4722d3\"", "size": 232488, "mimetype": "image/jpeg", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T09:53:21.000Z", "contentLength": 232488, "httpStatusCode": 200}', 'bb869ae8-4b6a-4959-9b91-43b72dbc086e', NULL),
+	('58f0529e-0a3e-42aa-8232-2bd2ef160d36', 'images', '0.7633219522839799.webp', NULL, '2024-06-08 09:58:41.642103+00', '2024-06-08 09:58:41.642103+00', '2024-06-08 09:58:41.642103+00', '{"eTag": "\"1d9d2843e468916a92940e67f4a6a983\"", "size": 20274, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T09:58:42.000Z", "contentLength": 20274, "httpStatusCode": 200}', '1a92889c-cd3d-4555-a10d-65d1c33dd586', NULL),
+	('6806704f-9230-468c-af0d-13872377b646', 'images', '0.8161259456746982.png', NULL, '2024-06-08 09:59:24.482725+00', '2024-06-08 09:59:24.482725+00', '2024-06-08 09:59:24.482725+00', '{"eTag": "\"f05afe71915be9fcbfb7f816af9febaa\"", "size": 233482, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T09:59:25.000Z", "contentLength": 233482, "httpStatusCode": 200}', '959511a3-5ced-4a88-a181-69e52baa5e17', NULL),
+	('6c3041be-9120-4c89-abbc-719f22d605aa', 'images', '0.4180202588449813.png', NULL, '2024-06-08 10:02:19.764686+00', '2024-06-08 10:02:19.764686+00', '2024-06-08 10:02:19.764686+00', '{"eTag": "\"1de89ee0de3bf538fa81d2a9c0e69e5d\"", "size": 334649, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T10:02:20.000Z", "contentLength": 334649, "httpStatusCode": 200}', '0bbf2be2-e60a-4675-bcad-89ef7d440cdf', NULL),
+	('1dbfd6e7-4587-466e-bb95-776ac0f23b0c', 'images', '0.3048832100564298.jpg', NULL, '2024-06-08 10:05:52.087543+00', '2024-06-08 10:05:52.087543+00', '2024-06-08 10:05:52.087543+00', '{"eTag": "\"5a7b1e2e655075104e8db4c30dda9bcd\"", "size": 15842, "mimetype": "image/jpeg", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T10:05:53.000Z", "contentLength": 15842, "httpStatusCode": 200}', 'ca4affc9-9453-4c5a-9324-4c6340f6907e', NULL),
+	('b9420c2a-0ac6-4915-ae6f-dff5896bb75e', 'images', '0.1331839586632727.webp', NULL, '2024-06-08 10:08:49.623079+00', '2024-06-08 10:08:49.623079+00', '2024-06-08 10:08:49.623079+00', '{"eTag": "\"486235935d445a76f4fd9f1e3b3ebea0\"", "size": 12430, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-08T10:08:50.000Z", "contentLength": 12430, "httpStatusCode": 200}', '33a5cc3b-7137-43f3-93e7-f59f56f6ae32', NULL);
 
 
 --
@@ -361,14 +397,14 @@ SELECT pg_catalog.setval('"public"."donors_id_seq"', 1, true);
 -- Name: gift_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."gift_translations_id_seq"', 82, true);
+SELECT pg_catalog.setval('"public"."gift_translations_id_seq"', 100, true);
 
 
 --
 -- Name: gifts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."gifts_id_seq"', 53, true);
+SELECT pg_catalog.setval('"public"."gifts_id_seq"', 62, true);
 
 
 --
