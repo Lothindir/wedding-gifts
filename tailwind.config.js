@@ -22,6 +22,7 @@ export default {
     extend: {
       opacity: ['disabled'],
       border: ['disabled'], 
+      italic: ['disabled', 'group-disabled'],
     }
   },
 }
