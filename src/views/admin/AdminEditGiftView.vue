@@ -170,7 +170,7 @@ async function updateGift() {
     toast.error(error.message, { duration: 5000 })
   } else {
     for (const l of languages.value) {
-      const { error } = await supabase.from('gift_translations').update(l).eq('id', l.id)
+      const { error } = await supabase.from('gift_translations').upsert({ ...l })
       if (error) {
         console.error(error)
         return
