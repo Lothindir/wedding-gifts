@@ -20,7 +20,7 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center">
-      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" />
+      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
     </div>
   </div>
 </template>
@@ -35,6 +35,7 @@ const props = defineProps<{
   totalParts: number
   giftedParts: number | null
   partPrice: number
+  giftable: boolean
 }>()
 
 const totalPrice = computed(() => props.totalParts * props.partPrice)

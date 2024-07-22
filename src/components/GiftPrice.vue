@@ -14,7 +14,7 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center bottom-0">
-      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" />
+      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
     </div>
   </div>
 </template>
@@ -29,6 +29,7 @@ import ContributeButton from '@/components/ContributeButton.vue'
 const props = defineProps<{
   totalPrice: number
   giftedAmount: number | null
+  giftable: boolean
 }>()
 
 const settingsStore = useSettingsStore()
