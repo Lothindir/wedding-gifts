@@ -77,6 +77,7 @@
 import { ref } from 'vue'
 import { Dialog, DialogDescription, DialogPanel, DialogTitle, TransitionChild, TransitionRoot, RadioGroup, RadioGroupOption } from '@headlessui/vue'
 import { CheckIcon } from '@heroicons/vue/24/outline'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { PhoneIcon, BanknotesIcon, CreditCardIcon, TruckIcon } from '@heroicons/vue/20/solid'
 import { useI18n } from 'vue-i18n';
 import { useSettingsStore } from '@/stores/settings';

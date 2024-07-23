@@ -1,80 +1,80 @@
 {
-  "wedding": {
-    "title": "Mariage de",
-    "lower_title": "mariage de",
-    "gift_list": "Liste de cadeaux",
-    "gift_list_description": "Nous avons créé une liste de cadeaux pour notre mariage. Vous pouvez contribuer à l'un des cadeaux ci-dessous."
-  },
-  "gift": {
-    "total": "Total",
-    "remaining": "Restant",
-    "part": "pièce | pièces",
-    "contribute": "Participer",
-    "description": "Description",
-    "participate": "Participer",
-    "amount_gifted": "Montant offert",
-    "select_amount": "Sélectionner une quantité",
-    "already_contributed": "Déjà offert",
-    "add_to_cart_continue": "Ajouter d'autres cadeaux",
-    "add_to_cart_checkout": "Offrir",
-    "product_information": "Information sur le produit",
-    "added_to_cart": "Ajouté au panier"
-  },
-  "checkout": {
-    "modal_title": "Merci beaucoup pour votre cadeau !",
-    "modal_description": "Voici comment nous l'offrir concrètement :",
-    "modal_text": "Vous pouvez soit nous verser l'argent sur notre compte bancaire, soit nous l'envoyer via TWINT.",
-    "modal_payment": "Moyen de paiement",
-    "confirm": "Confirmer votre cadeau",
-    "order_information": "Informations sur le panier",
-    "order_summary": "Résumé du panier",
-    "quantity": "Quantité :",
-    "total": "Total",
-    "personal_information": "Informations personnelles",
-    "email": "Adresse e-mail",
-    "first_name": "Prénom",
-    "last_name": "Nom",
-    "address": "Adresse",
-    "city": "Ville",
-    "country": "Pays",
-    "postal_code": "Code postal",
-    "aknowledgements_information": "Adresse pour les remerciements",
-    "message_information": "Votre message",
-    "message": "Message",
-    "required": "Données obligatoires",
-    "success": "Merci de votre cadeau !",
+    "wedding": {
+        "title": "Mariage de",
+        "lower_title": "mariage de",
+        "gift_list": "Liste de cadeaux",
+        "gift_list_description": "Nous avons créé une liste de cadeaux pour notre mariage. Vous pouvez contribuer à l'un des cadeaux ci-dessous."
+    },
+    "gift": {
+        "total": "Total",
+        "remaining": "Restant",
+        "part": "pièce | pièces",
+        "contribute": "Participer",
+        "already_contributed": "Déjà offert",
+        "description": "Description",
+        "participate": "Participer",
+        "amount_gifted": "Montant offert",
+        "select_amount": "Sélectionner une quantité",
+        "add_to_cart_continue": "Ajouter d'autres cadeaux",
+        "add_to_cart_checkout": "Offrir le cadeau",
+        "product_information": "Information sur le produit",
+        "added_to_cart": "Ajouté au panier"
+    },
+    "admin": {
+        "image": "Image",
+        "title": "Titre",
+        "description": "Description",
+        "price": "Prix",
+        "parts": "Pièces",
+        "edit": "Modifier",
+        "add": "Ajouter cadeau"
+    },
     "errors": {
-      "incomplete_informations": "Informations personnelles incomplètes",
-      "fill_field": "Veuillez remplir ce champ",
-      "fill_first_name": "Veuillez remplir le prénom",
-      "fill_last_name": "Veuillez remplir le nom",
-      "fill_email": "Veuillez remplir l'adresse email",
-      "invalid_email": "Adresse email invalide"
+        "home": "Accueil",
+        "home-message": "Retour à la page d'accueil",
+        "back": "Retour",
+        "404": {
+            "title": "Page non trouvée",
+            "description": "La page que vous cherchez n'existe pas.",
+            "language": "Le language demandé n'existe pas."
+        },
+        "enter_valid_amount": "Veuillez entrer un montant valide",
+        "amount_exceeds_remaining": "Le montant choisi excède le montant restant"
+    },
+    "checkout": {
+        "modal_title": "Merci beaucoup pour votre cadeau !",
+        "modal_description": "Voici comment nous l'offrir concrètement :",
+        "modal_text": "Vous pouvez soit nous verser l'argent sur notre compte bancaire, soit nous l'envoyer via TWINT.",
+        "modal_payment": "Moyen de paiement",
+        "confirm": "Confirmer votre cadeau",
+        "order_information": "Informations sur le panier",
+        "order_summary": "Résumé du panier",
+        "quantity": "Quantité :",
+        "total": "Total",
+        "personal_information": "Informations personnelles",
+        "email": "Adresse e-mail",
+        "first_name": "Prénom",
+        "last_name": "Nom",
+        "address": "Adresse",
+        "city": "Ville",
+        "country": "Pays",
+        "postal_code": "Code postal",
+        "aknowledgements_information": "Adresse pour les remerciements",
+        "message_information": "Votre message",
+        "message": "Message",
+        "required": "Champ obligatoire",
+        "success": "Merci de votre cadeau !",
+        "errors": {
+            "incomplete_informations": "Informations personnelles incomplètes",
+            "fill_field": "Veuillez remplir ce champ",
+            "fill_first_name": "Veuillez remplir le prénom",
+            "fill_last_name": "Veuillez remplir le nom",
+            "fill_email": "Veuillez remplir l'adresse email",
+            "invalid_email": "Adresse email invalide"
+        }
+    },
+    "utils": {
+        "close": "Fermer",
+        "back": "Retour"
     }
-  },
-  "admin": {
-    "image": "Image",
-    "title": "Titre",
-    "description": "Description",
-    "price": "Prix",
-    "parts": "Pièces",
-    "edit": "Modifier",
-    "add": "Ajouter cadeau"
-  },
-  "errors": {
-    "home": "Accueil",
-    "home-message": "Retour à la page d'accueil",
-    "back": "Retour",
-    "enter_valid_amount": "Veuillez entrer un montant valide",
-    "amount_exceeds_remaining": "Le montant excède le montant restant",
-    "404": {
-      "title": "Page non trouvée",
-      "description": "La page que vous cherchez n'existe pas.",
-      "language": "Le language demandé n'existe pas."
-    }
-  },
-  "utils": {
-    "close": "Fermer",
-    "back": "Retour"
-  }
 }
