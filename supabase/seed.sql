@@ -268,7 +268,8 @@ INSERT INTO "public"."transactions" ("id", "created_at", "amount", "gift", "dono
 --
 
 INSERT INTO "storage"."buckets" ("id", "name", "owner", "created_at", "updated_at", "public", "avif_autodetection", "file_size_limit", "allowed_mime_types", "owner_id") VALUES
-	('images', 'images', NULL, '2024-05-16 21:30:11.863486+00', '2024-05-16 21:30:11.863486+00', true, false, 2097152, '{image/*}', NULL);
+	('images', 'images', NULL, '2024-05-16 21:30:11.863486+00', '2024-05-16 21:30:11.863486+00', true, false, 2097152, '{image/*}', NULL),
+  ('payment_methods', 'payment_methods', NULL, '2024-07-23 18:02:24.560202+00', '2024-07-23 18:02:24.560202+00', true, false, 2097152, '{image/*}', NULL);
 
 
 --
@@ -315,7 +316,9 @@ INSERT INTO "storage"."objects" ("id", "bucket_id", "name", "owner", "created_at
 	('e5e5b291-2b68-4bc5-99b5-ade1ffd7815d', 'images', '0.7269363572853516.webp', NULL, '2024-06-04 14:25:27.702971+00', '2024-06-04 14:25:27.702971+00', '2024-06-04 14:25:27.702971+00', '{"eTag": "\"dfc1a71582947bf17b13d7ebf729358e\"", "size": 42364, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:25:28.000Z", "contentLength": 42364, "httpStatusCode": 200}', '29909543-6de4-4282-8e34-58cdd8045ced', NULL),
 	('e9501527-2740-4a70-bece-f143deaf91c8', 'images', '0.8110632498099748.png', NULL, '2024-06-04 14:33:41.130628+00', '2024-06-04 14:33:41.130628+00', '2024-06-04 14:33:41.130628+00', '{"eTag": "\"2d211dc97c6e35cac47fdfff34fa8364\"", "size": 947191, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:33:41.000Z", "contentLength": 947191, "httpStatusCode": 200}', '860d02ad-0e87-4101-9c15-e11d272ca348', NULL),
 	('b5291824-261d-47e1-9b0e-27d2503a5c55', 'images', '0.6297698112674929.webp', NULL, '2024-06-04 14:36:32.484192+00', '2024-06-04 14:36:32.484192+00', '2024-06-04 14:36:32.484192+00', '{"eTag": "\"c8bbde46e9c042ea20da88243b2628bf\"", "size": 290832, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:36:33.000Z", "contentLength": 290832, "httpStatusCode": 200}', '8518921c-1ede-47ee-a1a0-9d420963ead3', NULL),
-	('6688ec63-35da-40b8-807b-6202ee85baaa', 'images', '0.7107146061425804.webp', NULL, '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '{"eTag": "\"9063d5e96d2b6ceee99ee21b3e47187e\"", "size": 49340, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:42:29.000Z", "contentLength": 49340, "httpStatusCode": 200}', 'd4007411-fb2d-4101-8a92-0d85d1a79dd7', NULL);
+	('6688ec63-35da-40b8-807b-6202ee85baaa', 'images', '0.7107146061425804.webp', NULL, '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '2024-06-04 14:42:29.029514+00', '{"eTag": "\"9063d5e96d2b6ceee99ee21b3e47187e\"", "size": 49340, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-06-04T14:42:29.000Z", "contentLength": 49340, "httpStatusCode": 200}', 'd4007411-fb2d-4101-8a92-0d85d1a79dd7', NULL),
+  ('328d399a-ad5b-44e6-96cc-cfa57ceed528', 'payment_methods', 'twint.png', NULL, '2024-07-23 18:03:00.423534+00', '2024-07-23 18:03:00.423534+00', '2024-07-23 18:03:00.423534+00', '{"eTag": "\"9c29f9af649d980d9933e2ef3f7bed0b\"", "size": 32376, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-07-23T18:03:00.417Z", "contentLength": 32376, "httpStatusCode": 200}', 'd7890bde-dee9-4b6f-a05b-0bcfc7729e52', NULL),
+	('90e886cc-faee-451e-85f8-7d22f241e82a', 'payment_methods', 'qrcode.png', NULL, '2024-07-23 18:02:40.442604+00', '2024-07-23 18:03:17.354187+00', '2024-07-23 18:02:40.442604+00', '{"eTag": "\"df706f42e1f827ea9d95358a0caabe33\"", "size": 19708, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-07-23T18:03:17.347Z", "contentLength": 19708, "httpStatusCode": 200}', 'a04955e9-6f01-4daa-bccb-4c6d8e5db4c5', NULL);
 
 
 --
