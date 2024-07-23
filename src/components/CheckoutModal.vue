@@ -36,8 +36,8 @@
                   <legend class="text-lg font-medium text-gray-900">{{ t('checkout.modal_payment') }}</legend>
                   <RadioGroup v-model="selectedPaymentMethod"
                     class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                    <RadioGroupOption as="template" v-for="deliveryMethod in paymentMethods" :key="deliveryMethod.id"
-                      :value="deliveryMethod" :aria-label="deliveryMethod.title"
+                    <RadioGroupOption as="template" v-for="deliveryMethod in settingsStore.payment_methods"
+                      :key="deliveryMethod.id" :value="deliveryMethod" :aria-label="deliveryMethod.title"
                       :aria-description="`${deliveryMethod.title}`" v-slot="{ active, checked }">
                       <div
                         :class="[checked ? 'border-transparent' : 'border-gray-300', active ? 'ring-2 ring-indigo-500' : '', 'relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none']">
@@ -51,21 +51,12 @@
                 </fieldset>
               </div>
               <div class="text-sm text-gray-700 mt-2">
-                <div v-if="selectedPaymentMethod.id == 1" class="flex flex-col align-middle">
-                  <div class="flex justify-center my-1">
-                    <PhoneIcon class="w-6 mr-4" />
-                    <span class="my-auto">076 804 36 44</span>
+                <div class="flex flex-col align-middle">
+                  <div class="flex justify-center my-1" v-for="method of selectedPaymentMethod.info" :key="method">
+                    <component :is="selectedPaymentMethod.info_icon" class="w-6 mr-4"
+                      v-if="selectedPaymentMethod.info_icon" />
+                    <span class="my-auto">{{ method }}</span>
                   </div>
-                  <div class="flex justify-center my-1">
-                    <PhoneIcon class="w-6 mr-4" />
-                    <span class="my-auto">XXX XXX XX XX</span>
-                  </div>
-                </div>
-
-                <div v-if="selectedPaymentMethod.id == 2" class="flex align-middle flex-col mt-3">
-                  <span>IBAN: CH95 XXXX XXXX XXXX G</span>
-                  <span>Francesco Monti</span>
-                  <span>Vorderer Steinacker 4, 4600 Olten</span>
                 </div>
               </div>
 
@@ -86,19 +77,15 @@
 import { ref } from 'vue'
 import { Dialog, DialogDescription, DialogPanel, DialogTitle, TransitionChild, TransitionRoot, RadioGroup, RadioGroupOption } from '@headlessui/vue'
 import { CheckIcon } from '@heroicons/vue/24/outline'
-import { PhoneIcon } from '@heroicons/vue/20/solid'
+import { PhoneIcon, BanknotesIcon, CreditCardIcon, TruckIcon } from '@heroicons/vue/20/solid'
 import { useI18n } from 'vue-i18n';
-import twintLogo from '@/assets/images/twint.png'
-import bankLogo from '@/assets/images/bank.svg'
+import { useSettingsStore } from '@/stores/settings';
+import type { Tables } from '@/database/database.types'
 
 const { t } = useI18n()
+const settingsStore = useSettingsStore()
 
-const paymentMethods = [
-  { id: 1, title: 'TWINT', image: twintLogo },
-  { id: 2, title: 'Bank', image: bankLogo },
-]
-
-const selectedPaymentMethod = ref(paymentMethods[0])
+const selectedPaymentMethod = ref<Tables<'payment_methods'>>(settingsStore.payment_methods[0])
 
 const open = defineModel({ default: false })
 const emits = defineEmits<{

@@ -18,11 +18,25 @@ export const useGiftsStore = defineStore('gifts', () => {
     gifts.value = data
   }
 
-  async function loadGiftsTranslations(lang: string) {
-    console.log('loadGiftsTranslations', lang)
+  async function updateGift(id: number) {
+    const { data, error } = await supabase
+      .from('gifts')
+      .select('*')
+      .eq('id', id)
+      .eq('hidden', false)
+      .single()
 
+    if (error) {
+      console.error('Error updating gift(', id, '):', error)
+      return
+    }
+
+    const giftIndex = gifts.value.findIndex((g) => g.id == id)
+    gifts.value[giftIndex] = data
+  }
+
+  async function loadGiftsTranslations(lang: string) {
     const { data, error } = await supabase.from('gifts_visible').select('*').eq('language', lang)
-    console.log('loadGiftsTranslations', data, error)
     if (error) {
       console.error('Error loading gifts translations:', error)
       return
@@ -40,6 +54,7 @@ export const useGiftsStore = defineStore('gifts', () => {
     gifts,
     giftsTranslations,
     loadGifts,
+    updateGift,
     loadGiftsTranslations,
     getGiftById,
   }

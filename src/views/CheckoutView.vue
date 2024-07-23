@@ -43,10 +43,10 @@
             <div class="mt-6 flex space-x-2 w-full">
               <button type="button" @click.prevent="checkout" :disabled="cartStore.cartCount <= 0 || !recaptchaResponse"
                 class="w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 disabled:cursor-not-allowed disabled:bg-gray-800 disabled:hover:bg-gray-800">{{
-                  t('checkout.confirm') }}</button>
+  t('checkout.confirm') }}</button>
               <button type="button" @click="$router.push('/')"
                 class="w-full items-center justify-center rounded-md border border-transparent bg-gray-200 px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">{{
-                  t('utils.back') }}</button>
+                t('utils.back') }}</button>
             </div>
           </form>
         </section>
@@ -158,10 +158,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { TrashIcon } from '@heroicons/vue/20/solid'
 import CheckoutModal from '@/components/CheckoutModal.vue';
 import { useCartStore, type Purchaser } from '@/stores/cart';
+import { useGiftsStore } from '@/stores/gifts';
 import { useSettingsStore } from '@/stores/settings';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
@@ -169,9 +170,10 @@ import { useToast } from 'vue-toast-notification';
 import { Checkbox } from 'vue-recaptcha';
 
 const cartStore = useCartStore()
+const giftStore = useGiftsStore()
 const settingsStore = useSettingsStore()
 const router = useRouter()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const toast = useToast();
 const recaptchaResponse = ref('')
 const purchaserForm = ref({
@@ -216,9 +218,7 @@ function checkInformations(): boolean {
 }
 
 async function checkout() {
-  console.log('Checkout')
   if (!checkInformations() || !recaptchaResponse.value) return
-  checkoutModal.value = true
   let purchaser: Purchaser = {
     name: purchaserForm.value.firstName,
     surname: purchaserForm.value.lastName,
@@ -230,7 +230,15 @@ async function checkout() {
     message: purchaserForm.value.message
   }
 
-  cartStore.purchase(purchaser)
+  if (await cartStore.purchase(purchaser)) {
+    toast.success(t('checkout.success'))
+    for (let gift of cartStore.getCart()) {
+      giftStore.updateGift(gift.id)
+    }
+    cartStore.clearCart()
+    giftStore.loadGiftsTranslations(locale.value)
+    checkoutModal.value = true
+  }
 }
 
 function deleteItem(id: number) {
@@ -239,9 +247,12 @@ function deleteItem(id: number) {
 
 function closeModal() {
   checkoutModal.value = false
-  cartStore.clearCart()
   router.push('/')
 }
+
+onMounted(() => {
+  settingsStore.loadSettings()
+})
 </script>
 
 <style scoped>

@@ -77,7 +77,7 @@ export const useCartStore = defineStore('cart', () => {
     return cart.value.map((item) => ({ ...item }))
   }
 
-  async function purchase(purchaser: Purchaser) {
+  async function purchase(purchaser: Purchaser): Promise<boolean> {
     const donor: TablesInsert<'donors'> = {
       name: purchaser.name,
       surname: purchaser.surname,
@@ -92,20 +92,29 @@ export const useCartStore = defineStore('cart', () => {
         purchaser.country,
     }
 
-    const res = await supabase.from('donors').insert(donor).select('id').single()
+    const donor_res = await supabase.from('donors').insert(donor).select('id').single()
 
-    if (res.error) {
-      throw new Error(res.error.message)
+    if (donor_res.error) {
+      console.error(donor_res.error)
+      return false
     }
+
+    const data: TablesInsert<'transactions'>[] = []
     for (const gift of cart.value) {
-      const data: TablesInsert<'transactions'> = {
-        amount: gift.quantity ? gift.quantity : gift.cost,
-        donor: res.data!.id,
+      const t: TablesInsert<'transactions'> = {
+        amount: gift.mode === 'parts' ? gift.quantity : gift.cost,
+        donor: donor_res.data!.id,
         gift: gift.id,
       }
-
-      supabase.from('transactions').insert([data])
+      data.push(t)
     }
+    const t_res = await supabase.from('transactions').insert(data)
+    if (t_res.error) {
+      console.error(t_res.error)
+      return false
+    }
+
+    return true
   }
 
   return {

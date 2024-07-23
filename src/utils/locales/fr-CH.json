@@ -42,6 +42,7 @@
     "message_information": "Votre message",
     "message": "Message",
     "required": "Données obligatoires",
+    "success": "Merci de votre cadeau !",
     "errors": {
       "incomplete_informations": "Informations personnelles incomplètes",
       "fill_field": "Veuillez remplir ce champ",
