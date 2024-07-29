@@ -1,35 +1,80 @@
 {
-  "wedding": {
-    "title": "Hochzeit von",
-    "lower_title": "Hochzeit von",
-    "gift_list": "Geschänksliste",
-    "gift_list_description": "Wir haben für unsere Hochzeit eine Liste erstellt. Ihr könnt zu einem der folgenden Geschenke beitragen."
-  },
-  "gift": {
-    "total": "Total",
-    "remaining": "Übrig",
-    "part": "Stück | Stücke",
-    "contribute": "Beitragen",
-    "already_contributed": "Schon geschenkt",
-    "add_to_cart": "Zum Korb hinzufügen"
-  },
-  "admin": {
-    "image": "Bild",
-    "title": "Titel",
-    "description": "Beschreibung",
-    "price": "Preis",
-    "parts": "Stück",
-    "edit": "Ändern",
-    "add": "Geschenk hinzufügen"
-  },
-  "errors": {
-    "home": "Startseite",
-    "home-message": "Zurück zur Startseite",
-    "back": "Zurück",
-    "404": {
-      "title": "Seite nicht gefunden",
-      "description": "Die Seite die sie suchen existiert nicht.",
-      "language": "Diese Sprache existiert nicht."
+    "wedding": {
+        "title": "Hochzeit von",
+        "lower_title": "Hochzeit von",
+        "gift_list": "Geschänksliste",
+        "gift_list_description": "Wir haben für unsere Hochzeit eine Liste erstellt. Ihr könnt zu einem der folgenden Geschenke beitragen."
+    },
+    "gift": {
+        "total": "Total",
+        "remaining": "Übrig",
+        "part": "Stück | Stücke",
+        "contribute": "Beitragen",
+        "already_contributed": "Schon geschenkt",
+        "description": "Beschreibung",
+        "participate": "Teilnehmen",
+        "amount_gifted": "Geschenkter Betrag",
+        "select_amount": "Eine Anzahl auswählen",
+        "add_to_cart_continue": "Mehr Geschenke hinzufügen",
+        "add_to_cart_checkout": "Das Geschenk schenken",
+        "product_information": "Informationen über das Produkt",
+        "added_to_cart": "Zum Warenkorb hinzufügen"
+    },
+    "admin": {
+        "image": "Bild",
+        "title": "Titel",
+        "description": "Beschreibung",
+        "price": "Preis",
+        "parts": "Stück",
+        "edit": "Ändern",
+        "add": "Geschenk hinzufügen"
+    },
+    "errors": {
+        "home": "Startseite",
+        "home-message": "Zurück zur Startseite",
+        "back": "Zurück",
+        "404": {
+            "title": "Seite nicht gefunden",
+            "description": "Die Seite die sie suchen existiert nicht.",
+            "language": "Diese Sprache existiert nicht."
+        },
+        "enter_valid_amount": "Bitte gebt einen Gültigen Betrag ein",
+        "amount_exceeds_remaining": "Der eingegebene Betrag ist höher als der bleibende Betrag"
+    },
+    "checkout": {
+        "modal_title": "Vielen Dank für euer Geschenk !",
+        "modal_description": "So könnt ihr es uns konkret schenken :",
+        "modal_text": "Ihr könnt uns das Geld auf unser Bankkonto überweisen, oder es uns via TWINT schicken.",
+        "modal_payment": "Zahlarten",
+        "confirm": "Ihr Geschenk bestätigen",
+        "order_information": "Informationen Warenkorb",
+        "order_summary": "Zusammenfassung Warenkorb",
+        "quantity": "Menge",
+        "total": "Gesamtsumme",
+        "personal_information": "Persönliche Informationen",
+        "email": "E-Mail Adresse",
+        "first_name": "Vorname",
+        "last_name": "Nachname",
+        "address": "Adresse",
+        "city": "Stadt",
+        "country": "Land",
+        "postal_code": "Postleitzahl",
+        "aknowledgements_information": "Adresse um uns zu bedanken",
+        "message_information": "Ihre Nachricht",
+        "message": "Nachricht",
+        "required": "Obligatorisches Feld",
+        "success": "Danke für euer Geschenk",
+        "errors": {
+            "incomplete_informations": "Persönliche Informationen unvollständig",
+            "fill_field": "Bitte dieses Feld ausfüllen",
+            "fill_first_name": "Bitte Vorname ausfüllen",
+            "fill_last_name": "Bitte Nachname ausfüllen",
+            "fill_email": "Bitte Adresse ausfüllen",
+            "invalid_email": "Ungültige Emailadresse"
+        }
+    },
+    "utils": {
+        "close": "Schliessen",
+        "back": "Zurück"
     }
-  }
 }
