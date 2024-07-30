@@ -9,6 +9,7 @@
         "total": "Total",
         "remaining": "Übrig",
         "part": "Stück | Stücke",
+        "remaining_part": "übrig",
         "contribute": "Beitragen",
         "already_contributed": "Schon geschenkt",
         "description": "Beschreibung",
@@ -63,7 +64,9 @@
         "message_information": "Ihre Nachricht",
         "message": "Nachricht",
         "required": "Obligatorisches Feld",
+        "processing": "In Bearbeitung...",
         "success": "Danke für euer Geschenk",
+        "failure": "Bei der Buchung Ihres Geschenks ist ein Fehler aufgetreten",
         "errors": {
             "incomplete_informations": "Persönliche Informationen unvollständig",
             "fill_field": "Bitte dieses Feld ausfüllen",

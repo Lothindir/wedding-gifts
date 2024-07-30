@@ -9,6 +9,7 @@
         "total": "Total",
         "remaining": "Restant",
         "part": "pièce | pièces",
+        "remaining_part": "restante | restantes",
         "contribute": "Participer",
         "already_contributed": "Déjà offert",
         "description": "Description",
@@ -63,7 +64,9 @@
         "message_information": "Votre message",
         "message": "Message",
         "required": "Champ obligatoire",
+        "processing": "Traitement en cours...",
         "success": "Merci de votre cadeau !",
+        "failure": "Une erreur est survenue lors de la reservation de votre cadeau",
         "errors": {
             "incomplete_informations": "Informations personnelles incomplètes",
             "fill_field": "Veuillez remplir ce champ",

@@ -15,6 +15,7 @@
         <p class="text-md font-medium font-bold text-center text-teal-700">{{ remainingParts }}</p>
         <p class="text-sm font-medium text-center text-gray-700">
           {{ t('gift.part', remainingParts) }}
+          <br />{{ t('gift.remaining_part', remainingParts) }}
         </p>
       </div>
     </div>

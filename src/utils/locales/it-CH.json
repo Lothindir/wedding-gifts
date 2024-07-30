@@ -9,6 +9,7 @@
         "total": "Totale",
         "remaining": "Rimanente",
         "part": "pezzo | pezzi",
+        "remaining_part": "rimanente | rimanenti",
         "contribute": "Contribuire",
         "already_contributed": "Già regalato",
         "description": "Descrizione",
@@ -63,7 +64,9 @@
         "message_information": "Il vostro messaggio",
         "message": "Messaggio",
         "required": "Campo obbligatorio",
+        "processing": "Elaborazione in corso...",
         "success": "Grazie del vostro regalo!",
+        "failure": "Errore durante l'elaborazione della riservazione",
         "errors": {
             "incomplete_informations": "Informazioni personali incorrette",
             "fill_field": "Per favore riempire questo campo",

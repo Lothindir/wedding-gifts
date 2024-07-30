@@ -63,6 +63,7 @@
         "message_information": "Your message",
         "message": "Message",
         "required": "Required",
+        "processing": "Processing...",
         "success": "Thank you for your gift!",
         "errors": {
             "incomplete_informations": "Personal Information incomplete",
