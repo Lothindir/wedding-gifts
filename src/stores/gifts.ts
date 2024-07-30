@@ -15,7 +15,7 @@ export const useGiftsStore = defineStore('gifts', () => {
       return
     }
 
-    gifts.value = data
+    gifts.value = data.sort((a, b) => a.id - b.id)
   }
 
   async function updateGift(id: number) {
@@ -42,7 +42,7 @@ export const useGiftsStore = defineStore('gifts', () => {
       return
     }
 
-    giftsTranslations.value = data
+    giftsTranslations.value = data.sort((a, b) => a.title.localeCompare(b.title))
   }
 
   function getGiftById(id: number): Tables<'gifts_visible'> | undefined {

@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-white h-screen w-full p-8">
+  <main class="bg-white w-full p-8">
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
@@ -96,7 +96,7 @@ async function getGifts() {
   if (error) {
     toast.error('Error fetching gifts')
   } else {
-    gifts.value = data
+    gifts.value = data.sort((a, b) => a.id - b.id)
   }
 }
 
