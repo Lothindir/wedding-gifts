@@ -124,7 +124,7 @@ export const useCartStore = defineStore('cart', () => {
         email: purchaser.email,
         amount_gifted: total(),
       },
-      { publicKey: 'jb5DTi7ejZOMKTCBs' }
+      { publicKey: import.meta.env.VITE_EMAILJS_PK }
     )
 
     if (res.status !== 200) {
