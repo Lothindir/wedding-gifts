@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { supabase } from '@/database/supabase'
 import type { TablesInsert } from '@/database/database.types'
+import emailjs from '@emailjs/browser'
 
 export interface CartItem {
   id: number
@@ -77,7 +78,7 @@ export const useCartStore = defineStore('cart', () => {
     return cart.value.map((item) => ({ ...item }))
   }
 
-  async function purchase(purchaser: Purchaser): Promise<boolean> {
+  async function purchase(purchaser: Purchaser, locale: string): Promise<boolean> {
     const donor: TablesInsert<'donors'> = {
       name: purchaser.name,
       surname: purchaser.surname,
@@ -111,6 +112,23 @@ export const useCartStore = defineStore('cart', () => {
     const t_res = await supabase.from('transactions').insert(data)
     if (t_res.error) {
       console.error(t_res.error)
+      return false
+    }
+
+    const res = await emailjs.send(
+      'contact_katjafrancesco',
+      'gift_confirmation_' + locale,
+      {
+        first_name: purchaser.name,
+        last_name: purchaser.surname,
+        email: purchaser.email,
+        amount_gifted: total(),
+      },
+      { publicKey: 'jb5DTi7ejZOMKTCBs' }
+    )
+
+    if (res.status !== 200) {
+      console.error(res)
       return false
     }
 
