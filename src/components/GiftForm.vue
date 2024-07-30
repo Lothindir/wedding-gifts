@@ -191,8 +191,8 @@ watch(() => languages.value, () => {
 function addLanguage() {
   if (languageToAdd.value) {
     languages.value.push({
-      id: 0,
-      gift: 0,
+      id: -1,
+      gift: gift.value.id!,
       language: languageToAdd.value,
       title: '',
       description: '',

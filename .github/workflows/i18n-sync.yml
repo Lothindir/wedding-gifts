@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   # -------------------------------------------------------------
@@ -33,5 +33,10 @@ jobs:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           for file in ${ALL_CHANGED_FILES}; do
-            echo "$file was changed"
+            if [[ $file == "src/utils/locales/fr-CH.json" ]]; then
+              echo "Importing new terms in POEditor..."
+              curl -s https://api.poeditor.com/webhooks/c3ef7260c3
+            else
+              echo "$file changed..."
+            fi
           done

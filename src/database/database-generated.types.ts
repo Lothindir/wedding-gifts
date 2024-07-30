@@ -12,22 +12,28 @@ export type Database = {
       donors: {
         Row: {
           address: string
+          created_at: string
           email: string
           id: number
+          message: string | null
           name: string
           surname: string
         }
         Insert: {
           address?: string
+          created_at?: string
           email?: string
           id?: number
+          message?: string | null
           name: string
           surname: string
         }
         Update: {
           address?: string
+          created_at?: string
           email?: string
           id?: number
+          message?: string | null
           name?: string
           surname?: string
         }
@@ -100,6 +106,30 @@ export type Database = {
           image?: string
           parts?: number
           price?: number
+        }
+        Relationships: []
+      }
+      payment_methods: {
+        Row: {
+          id: number
+          image: string
+          info: string[]
+          info_icon: Database["public"]["Enums"]["paymenticons"] | null
+          title: string
+        }
+        Insert: {
+          id?: number
+          image: string
+          info: string[]
+          info_icon?: Database["public"]["Enums"]["paymenticons"] | null
+          title: string
+        }
+        Update: {
+          id?: number
+          image?: string
+          info?: string[]
+          info_icon?: Database["public"]["Enums"]["paymenticons"] | null
+          title?: string
         }
         Relationships: []
       }
@@ -207,7 +237,11 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      paymenticons:
+        | "PhoneIcon"
+        | "BanknotesIcon"
+        | "CrediCardIcon"
+        | "TruckIcon"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -490,6 +524,10 @@ export type Database = {
           updated_at: string
         }[]
       }
+      operation: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
       search: {
         Args: {
           prefix: string
@@ -601,3 +639,4 @@ export type Enums<
   : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
     ? PublicSchema["Enums"][PublicEnumNameOrOptions]
     : never
+

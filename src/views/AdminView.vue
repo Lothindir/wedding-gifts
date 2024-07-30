@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-300 h-full w-full p-4">
+  <div class="bg-gray-300 w-full p-4 flex flex-col flex-1">
     <h2 class="text-4xl my-4 font-medium text-gray-900">Actions</h2>
     <ul role="list" class="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
       <li v-for="action in actions" :key="action.name" class="col-span-1 flex rounded-md shadow-sm">
@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import { supabase } from '@/database/supabase'
 import { EllipsisVerticalIcon } from '@heroicons/vue/20/solid'
 
 const actions = [

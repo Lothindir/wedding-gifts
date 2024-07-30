@@ -11,9 +11,9 @@
           <GiftItem v-for="gift in gifts" :key="gift.id!" :title="gift.title!" :img="gift.image!" :alt="gift.title"
             :description="gift.description!">
             <GiftPrice :total-price="gift.price!" :gifted-amount="gift.amount_gifted" v-if="gift.parts == 0"
-              @contribute="contribute(gift.id!)" />
+              :giftable="true" @contribute="contribute(gift.id!)" />
             <GiftParts :total-parts="gift.parts!" :gifted-parts="gift.amount_gifted" :part-price="gift.price!" v-else
-              @contribute="contribute" />
+              :giftable="true" @contribute="contribute(gift.id!)" />
           </GiftItem>
         </div>
 

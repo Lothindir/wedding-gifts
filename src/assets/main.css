@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 /* Variable Fonts */
 @supports (font-variation-settings: normal) {

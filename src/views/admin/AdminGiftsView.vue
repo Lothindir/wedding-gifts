@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-white h-screen w-full p-8">
+  <main class="bg-white w-full p-8">
     <div class="px-4 sm:px-6 lg:px-8">
       <div class="sm:flex sm:items-center">
         <div class="sm:flex-auto">
@@ -40,11 +40,12 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 bg-white rounded rounded-md">
-            <tr v-for="gift in gifts" :key="gift.id">
+            <tr v-for="gift in gifts" :key="gift.id!" disabled="true" class="group">
               <td class="whitespace-nowrap py-4 pl-1 pr-1 text-sm font-medium text-gray-900 sm:pl-0">
-                <img :src="gift.image" class="object-cover object-center w-16 h-16" />
+                <img :src="gift.image!" class="object-cover object-center w-16 h-16" />
               </td>
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:table-cell">
+              <td
+                class="group-disabled:italic whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:table-cell">
                 {{ gift.title }}
               </td>
               <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
@@ -58,7 +59,7 @@
                 <router-link :to="`/admin/gifts/${gift.id}`" class="text-indigo-600 hover:text-indigo-900">
                   Edit<span class="sr-only">, {{ gift.title }}</span></router-link>
                 <button type="button" class="text-white rounded-md bg-red-400 p-1 hover:text-red-900 ml-2"
-                  @click="tryDelete(gift.id)">
+                  @click="tryDelete(gift.id!)">
                   Delete
                 </button>
               </td>
@@ -95,7 +96,7 @@ async function getGifts() {
   if (error) {
     toast.error('Error fetching gifts')
   } else {
-    gifts.value = data
+    gifts.value = data.sort((a, b) => a.id - b.id)
   }
 }
 

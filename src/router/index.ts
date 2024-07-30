@@ -22,10 +22,15 @@ const router = createRouter({
           router.push({ name: 'not-found', params: { pathMatch: 'unknown locale' } })
         } else {
           const localeId = localeArray.findIndex((l) => l == futureLocale)
-          i18n.global.locale.value = i18n.global.availableLocales[localeId]
+          i18n.global.locale = i18n.global.availableLocales[localeId]
           router.push('/')
         }
       },
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: () => import('@/views/CheckoutView.vue'),
     },
     {
       path: '/admin',
