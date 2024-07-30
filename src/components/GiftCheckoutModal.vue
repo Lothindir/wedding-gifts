@@ -36,7 +36,8 @@
                     <section aria-labelledby="information-heading" class="mt-3">
                       <h3 id="information-heading" class="sr-only">{{ t('gift.product_information') }}</h3>
 
-                      <p class="text-2xl text-gray-900">{{ gift?.price }} {{ settingsStore.currency }}</p>
+                      <p class="text-2xl text-gray-900" v-if="!isFreeParticipation">{{ gift?.price }} {{
+                        settingsStore.currency }}</p>
 
                       <div class="mt-6">
                         <h4 class="sr-only">{{ t('gift.description') }}</h4>
@@ -57,7 +58,7 @@
                         <div class="flex justify-between mt-2">
                           <label for="price"
                             class="inline text-sm font-medium mt-1 align-middle leading-6 text-gray-900">{{
-                              t('gift.amount_gifted') }}</label>
+  t('gift.amount_gifted') }}</label>
 
                           <!-- Price -->
                           <div class="relative rounded-md shadow-sm" v-if="pricingMode">
@@ -128,6 +129,7 @@ const toast = useToast()
 const { t } = useI18n()
 
 const gift = computed(() => giftsStore.getGiftById(props.id))
+const isFreeParticipation = computed(() => gift.value!.price == 0)
 const pricingMode = computed(() => (gift.value && gift.value.parts == 0))
 const remainingAmount = computed(() => {
   if (pricingMode.value)
@@ -143,7 +145,7 @@ function addToCart(continueShopping: boolean = false) {
     toast.error(t('errors.enter_valid_amount'))
     return
   }
-  if (amount.value > remainingAmount.value) {
+  if (amount.value > remainingAmount.value && !isFreeParticipation.value) {
     toast.error(t('errors.amount_exceeds_remaining'))
     return
   }

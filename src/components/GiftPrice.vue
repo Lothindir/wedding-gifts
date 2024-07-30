@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-4 flex justify-between" v-if="isGiftable">
+    <div class="mt-4 flex justify-between" v-if="isGiftable && !isFreeParticipation">
       <div>
         <p class="text-sm font-medium text-gray-700">{{ t('gift.total') }}</p>
         <p class="text-sm font-medium text-gray-700">{{ t('gift.remaining') }}</p>
@@ -12,7 +12,7 @@
         </p>
       </div>
     </div>
-    <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
+    <hr class="mt-4 bg-black border-1" v-if="isGiftable && !isFreeParticipation" />
     <div class="flex justify-center bottom-0">
       <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
     </div>
@@ -42,6 +42,7 @@ const remainingAmount = computed(() => {
   }
   return props.totalPrice - props.giftedAmount
 })
-const isGiftable = computed(() => remainingAmount.value > 0)
+const isGiftable = computed(() => remainingAmount.value > 0 || isFreeParticipation.value)
+const isFreeParticipation = computed(() => props.totalPrice === 0)
 </script>
 

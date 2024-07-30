@@ -31,6 +31,9 @@
                   {{ t('checkout.modal_text') }}
                 </p>
               </div>
+              <div class="mt-6 border-t border-gray-200 text-gray-700 font-bold text-center text-xl pt-6">
+                {{ t('gift.amount_gifted') }} : {{ props.amountGifted }} {{ settingsStore.currency }}
+              </div>
               <div class="mt-6 border-t border-gray-200 pt-6">
                 <fieldset>
                   <legend class="text-lg font-medium text-gray-900">{{ t('checkout.modal_payment') }}</legend>
@@ -53,7 +56,7 @@
               <div class="text-sm text-gray-700 mt-2">
                 <div class="flex flex-col align-middle">
                   <div class="flex justify-center my-1" v-for="method of selectedPaymentMethod.info" :key="method">
-                    <component :is="selectedPaymentMethod.info_icon" class="w-6 mr-4"
+                    <component :is="getIcon(selectedPaymentMethod.info_icon)" class="w-6 mr-4"
                       v-if="selectedPaymentMethod.info_icon" />
                     <span class="my-auto">{{ method }}</span>
                   </div>
@@ -78,10 +81,14 @@ import { ref } from 'vue'
 import { Dialog, DialogDescription, DialogPanel, DialogTitle, TransitionChild, TransitionRoot, RadioGroup, RadioGroupOption } from '@headlessui/vue'
 import { CheckIcon } from '@heroicons/vue/24/outline'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { PhoneIcon, BanknotesIcon, CreditCardIcon, TruckIcon } from '@heroicons/vue/20/solid'
+import { PhoneIcon, BanknotesIcon, CreditCardIcon, TruckIcon, QuestionMarkCircleIcon } from '@heroicons/vue/20/solid'
 import { useI18n } from 'vue-i18n';
 import { useSettingsStore } from '@/stores/settings';
 import type { Tables } from '@/database/database.types'
+
+const props = defineProps<{
+  amountGifted: number
+}>()
 
 const { t } = useI18n()
 const settingsStore = useSettingsStore()
@@ -92,6 +99,21 @@ const open = defineModel({ default: false })
 const emits = defineEmits<{
   close: any
 }>()
+
+function getIcon(iconName: string) {
+  switch (iconName) {
+    case 'PhoneIcon':
+      return PhoneIcon
+    case 'BanknotesIcon':
+      return BanknotesIcon
+    case 'CreditCardIcon':
+      return CreditCardIcon
+    case 'TruckIcon':
+      return TruckIcon
+    default:
+      return QuestionMarkCircleIcon
+  }
+}
 
 function close() {
   open.value = false;
