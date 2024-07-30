@@ -1,5 +1,10 @@
 <template>
-  <GiftForm v-model:gift="gift" v-model:languages="languages" @save="addGift" @cancel="router.push('/admin/gifts')" />
+  <GiftForm
+    v-model:gift="gift"
+    v-model:languages="languages"
+    @save="addGift"
+    @cancel="router.push('/admin/gifts')"
+  />
 </template>
 
 <script setup lang="ts">
@@ -17,7 +22,7 @@ const gift = ref<TablesInsert<'gifts'>>({
   hidden: false,
   image: '',
   parts: 0,
-  price: 0
+  price: 0,
 })
 const languages = ref<TablesInsert<'gift_translations'>[]>([])
 const toast = useToast()

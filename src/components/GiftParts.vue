@@ -21,7 +21,11 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center">
-      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
+      <ContributeButton
+        :active="isGiftable"
+        @contribute="$emit('contribute')"
+        v-if="props.giftable"
+      />
     </div>
   </div>
 </template>

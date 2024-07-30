@@ -1,6 +1,10 @@
 <template>
-  <GiftForm v-model:gift="gift" v-model:languages="languages" @save="updateGift"
-    @cancel="router.push('/admin/gifts')" />
+  <GiftForm
+    v-model:gift="gift"
+    v-model:languages="languages"
+    @save="updateGift"
+    @cancel="router.push('/admin/gifts')"
+  />
 </template>
 
 <script setup lang="ts">
@@ -20,7 +24,7 @@ const gift = ref<Tables<'gifts'>>({
   id: 0,
   image: '',
   parts: 0,
-  price: 0
+  price: 0,
 })
 const languages = ref<Tables<'gift_translations'>[]>([])
 
@@ -62,8 +66,7 @@ async function updateGift() {
     for (const l of languages.value) {
       let language: TablesInsert<'gift_translations'> = { ...l }
       if (language.id === -1) delete language.id
-      console.log('Language', language);
-
+      console.log('Language', language)
 
       const { error } = await supabase.from('gift_translations').upsert(language)
       if (error) {

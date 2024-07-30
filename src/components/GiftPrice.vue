@@ -7,14 +7,16 @@
       </div>
       <div>
         <p class="text-sm font-medium text-gray-700">{{ totalPrice }} {{ currency }}</p>
-        <p class="text-sm italic font-medium text-gray-500">
-          {{ remainingAmount }} {{ currency }}
-        </p>
+        <p class="text-sm italic font-medium text-gray-500">{{ remainingAmount }} {{ currency }}</p>
       </div>
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable && !isFreeParticipation" />
     <div class="flex justify-center bottom-0">
-      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
+      <ContributeButton
+        :active="isGiftable"
+        @contribute="$emit('contribute')"
+        v-if="props.giftable"
+      />
     </div>
   </div>
 </template>
@@ -23,7 +25,7 @@
 import { computed } from 'vue'
 import { useSettingsStore } from '@/stores/settings'
 import { useI18n } from 'vue-i18n'
-import { storeToRefs } from 'pinia';
+import { storeToRefs } from 'pinia'
 import ContributeButton from '@/components/ContributeButton.vue'
 
 const props = defineProps<{
@@ -45,4 +47,3 @@ const remainingAmount = computed(() => {
 const isGiftable = computed(() => remainingAmount.value > 0 || isFreeParticipation.value)
 const isFreeParticipation = computed(() => props.totalPrice === 0)
 </script>
-
