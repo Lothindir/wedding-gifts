@@ -42,7 +42,7 @@ export const useGiftsStore = defineStore('gifts', () => {
       return
     }
 
-    giftsTranslations.value = data.sort((a, b) => a.title.localeCompare(b.title))
+    giftsTranslations.value = data.sort((a, b) => 0 - a.price && a.title.localeCompare(b.title))
   }
 
   function getGiftById(id: number): Tables<'gifts_visible'> | undefined {

@@ -15,7 +15,12 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, h } from 'vue'
+import { computed, defineComponent, h } from 'vue'
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
+
+const isAdminRoute = computed(() => route.path.includes('/admin'))
 
 const navigation = [
   // {

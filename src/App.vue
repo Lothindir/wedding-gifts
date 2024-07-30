@@ -3,6 +3,7 @@ import { ref, onMounted, defineComponent, h } from 'vue'
 import { RouterView } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { i18n, loadLocaleMessages } from './utils/i18n';
+
 import { useSettingsStore } from '@/stores/settings'
 import { useGiftsStore } from '@/stores/gifts'
 import { useRecaptchaProvider } from 'vue-recaptcha';
@@ -17,6 +18,8 @@ const { t, locale } = useI18n()
 // const selectedLocale = ref<string>(i18n.global.locale)
 const settingsStore = useSettingsStore()
 const giftsStore = useGiftsStore()
+const devMode = import.meta.env.DEV
+
 settingsStore.loadSettings()
 giftsStore.loadGifts()
 giftsStore.loadGiftsTranslations(locale.value)
@@ -57,6 +60,19 @@ giftsStore.loadGiftsTranslations(locale.value)
       </div>
     </div>
   </header>
+  <div class="flex items-center gap-x-6 bg-orange-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1" v-if="devMode">
+    <p class="text-sm leading-6 text-white">
+      <a href="#">
+        <strong class="font-semibold">Work in progress</strong><svg viewBox="0 0 2 2"
+          class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
+          <circle cx="1" cy="1" r="1" />
+        </svg>
+        This website is still under development. Some features may not work as expected.
+      </a>
+    </p>
+    <div class="flex flex-1 justify-end">
+    </div>
+  </div>
 
   <div class="h-full">
     <RouterView class="flex-1" />
