@@ -1,6 +1,8 @@
 <template>
   <div class="group relative bg-white p-4 rounded-xl flex flex-col justify-between">
-    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60">
+    <div
+      class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
+    >
       <img :src="img" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
     </div>
     <div class="mt-4 flex justify-between">

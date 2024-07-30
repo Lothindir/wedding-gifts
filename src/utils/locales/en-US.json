@@ -1,81 +1,81 @@
 {
-    "wedding": {
-        "title": "Wedding of",
-        "lower_title": "wedding of",
-        "gift_list": "Wedding list",
-        "gift_list_description": "We created a wedding list to help you choose a gift that will make us happy. You can contribute to any gift below."
+  "wedding": {
+    "title": "Wedding of",
+    "lower_title": "wedding of",
+    "gift_list": "Wedding list",
+    "gift_list_description": "We created a wedding list to help you choose a gift that will make us happy. You can contribute to any gift below."
+  },
+  "gift": {
+    "total": "Total",
+    "remaining": "Remaining",
+    "part": "piece | pieces",
+    "contribute": "Contribute",
+    "already_contributed": "Already gifed",
+    "description": "Description",
+    "participate": "Participate",
+    "amount_gifted": "Amount gifted",
+    "select_amount": "Select amount",
+    "add_to_cart_continue": "Add more gifts",
+    "add_to_cart_checkout": "Gift",
+    "product_information": "Product information",
+    "added_to_cart": "Added to cart"
+  },
+  "admin": {
+    "image": "Image",
+    "title": "Title",
+    "description": "Description",
+    "price": "Price",
+    "parts": "Pieces",
+    "edit": "Edit",
+    "add": "Add new gift"
+  },
+  "errors": {
+    "home": "Homepage",
+    "home-message": "Back to homepage",
+    "back": "Back",
+    "404": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist.",
+      "language": "The requested language does not exist."
     },
-    "gift": {
-        "total": "Total",
-        "remaining": "Remaining",
-        "part": "piece | pieces",
-        "contribute": "Contribute",
-        "already_contributed": "Already gifed",
-        "description": "Description",
-        "participate": "Participate",
-        "amount_gifted": "Amount gifted",
-        "select_amount": "Select amount",
-        "add_to_cart_continue": "Add more gifts",
-        "add_to_cart_checkout": "Gift",
-        "product_information": "Product information",
-        "added_to_cart": "Added to cart"
-    },
-    "admin": {
-        "image": "Image",
-        "title": "Title",
-        "description": "Description",
-        "price": "Price",
-        "parts": "Pieces",
-        "edit": "Edit",
-        "add": "Add new gift"
-    },
+    "enter_valid_amount": "Please enter a valid amount",
+    "amount_exceeds_remaining": "The chosen amount exceeds the remaining amount"
+  },
+  "checkout": {
+    "modal_title": "Thanks a lot for your gift!",
+    "modal_description": "Here is how you can send us the money for the gift:",
+    "modal_text": "You can either wire us the money on our bank account or send it using TWINT.",
+    "modal_payment": "Payment methods",
+    "confirm": "Confirm your gift",
+    "order_information": "Cart Information",
+    "order_summary": "Cart Summary",
+    "quantity": "Quantity:",
+    "total": "Total",
+    "personal_information": "Personal Information",
+    "email": "Email address",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "postal_code": "Postal Code",
+    "aknowledgements_information": "Acknowledgement Information",
+    "message_information": "Your message",
+    "message": "Message",
+    "required": "Required",
+    "processing": "Processing...",
+    "success": "Thank you for your gift!",
     "errors": {
-        "home": "Homepage",
-        "home-message": "Back to homepage",
-        "back": "Back",
-        "404": {
-            "title": "Page not found",
-            "description": "The page you are looking for does not exist.",
-            "language": "The requested language does not exist."
-        },
-        "enter_valid_amount": "Please enter a valid amount",
-        "amount_exceeds_remaining": "The chosen amount exceeds the remaining amount"
-    },
-    "checkout": {
-        "modal_title": "Thanks a lot for your gift!",
-        "modal_description": "Here is how you can send us the money for the gift:",
-        "modal_text": "You can either wire us the money on our bank account or send it using TWINT.",
-        "modal_payment": "Payment methods",
-        "confirm": "Confirm your gift",
-        "order_information": "Cart Information",
-        "order_summary": "Cart Summary",
-        "quantity": "Quantity:",
-        "total": "Total",
-        "personal_information": "Personal Information",
-        "email": "Email address",
-        "first_name": "First Name",
-        "last_name": "Last Name",
-        "address": "Address",
-        "city": "City",
-        "country": "Country",
-        "postal_code": "Postal Code",
-        "aknowledgements_information": "Acknowledgement Information",
-        "message_information": "Your message",
-        "message": "Message",
-        "required": "Required",
-        "processing": "Processing...",
-        "success": "Thank you for your gift!",
-        "errors": {
-            "incomplete_informations": "Personal Information incomplete",
-            "fill_field": "Please fill out this field",
-            "fill_first_name": "Please fill out the first name",
-            "fill_last_name": "Please fill out the last name",
-            "fill_email": "Please fill out the email address",
-            "invalid_email": "Invalid email address"
-        }
-    },
-    "utils": {
-        "close": "Close",
-        "back": "Back"
+      "incomplete_informations": "Personal Information incomplete",
+      "fill_field": "Please fill out this field",
+      "fill_first_name": "Please fill out the first name",
+      "fill_last_name": "Please fill out the last name",
+      "fill_email": "Please fill out the email address",
+      "invalid_email": "Invalid email address"
     }
+  },
+  "utils": {
+    "close": "Close",
+    "back": "Back"
+  }
 }

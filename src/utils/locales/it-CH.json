@@ -1,83 +1,83 @@
 {
-    "wedding": {
-        "title": "Matrimonio di",
-        "lower_title": "matrimonio di",
-        "gift_list": "Liste dei regali",
-        "gift_list_description": "Abbiamo messo insieme una lista di regali per il nostro matrimonio. Potete contribuire a uno dei regali qui sotto."
+  "wedding": {
+    "title": "Matrimonio di",
+    "lower_title": "matrimonio di",
+    "gift_list": "Liste dei regali",
+    "gift_list_description": "Abbiamo messo insieme una lista di regali per il nostro matrimonio. Potete contribuire a uno dei regali qui sotto."
+  },
+  "gift": {
+    "total": "Totale",
+    "remaining": "Rimanente",
+    "part": "pezzo | pezzi",
+    "remaining_part": "rimanente | rimanenti",
+    "contribute": "Contribuire",
+    "already_contributed": "Già regalato",
+    "description": "Descrizione",
+    "participate": "Partecipare",
+    "amount_gifted": "Quantità da regalare",
+    "select_amount": "Selezionare una quantità",
+    "add_to_cart_continue": "Aggiungere altri regali",
+    "add_to_cart_checkout": "Regalare",
+    "product_information": "Informazioni sul regalo",
+    "added_to_cart": "Aggiunto al carrello"
+  },
+  "admin": {
+    "image": "Immagine",
+    "title": "Titolo",
+    "description": "Descrizione",
+    "price": "Prezzo",
+    "parts": "Pezzi",
+    "edit": "Modifica",
+    "add": "Aggiungi regalo"
+  },
+  "errors": {
+    "home": "Homepage",
+    "home-message": "Ritorno alla homepage",
+    "back": "Indietro",
+    "404": {
+      "title": "Pagina non trovata",
+      "description": "La pagina che cercate non esiste.",
+      "language": "La lingua richiesta non esiste."
     },
-    "gift": {
-        "total": "Totale",
-        "remaining": "Rimanente",
-        "part": "pezzo | pezzi",
-        "remaining_part": "rimanente | rimanenti",
-        "contribute": "Contribuire",
-        "already_contributed": "Già regalato",
-        "description": "Descrizione",
-        "participate": "Partecipare",
-        "amount_gifted": "Quantità da regalare",
-        "select_amount": "Selezionare una quantità",
-        "add_to_cart_continue": "Aggiungere altri regali",
-        "add_to_cart_checkout": "Regalare",
-        "product_information": "Informazioni sul regalo",
-        "added_to_cart": "Aggiunto al carrello"
-    },
-    "admin": {
-        "image": "Immagine",
-        "title": "Titolo",
-        "description": "Descrizione",
-        "price": "Prezzo",
-        "parts": "Pezzi",
-        "edit": "Modifica",
-        "add": "Aggiungi regalo"
-    },
+    "enter_valid_amount": "Per favore indicare una quantità valida",
+    "amount_exceeds_remaining": "La quantità scelta supera quella rimanente"
+  },
+  "checkout": {
+    "modal_title": "Grazie di cuore per il vostro regalo!",
+    "modal_description": "Ecco come potete mandarci il regalo:",
+    "modal_text": "Potete versarci i soldi sul conto bancario oppure mandarceli via TWINT.",
+    "modal_payment": "Metodo di pagamento",
+    "confirm": "Confermare il regalo",
+    "order_information": "Informazioni sul carrello",
+    "order_summary": "Riassunto del carrello",
+    "quantity": "Quantità:",
+    "total": "Totale",
+    "personal_information": "Informazioni personali",
+    "email": "Indirizzo e-mail",
+    "first_name": "Nome",
+    "last_name": "Cognome",
+    "address": "Indirizzo",
+    "city": "Città",
+    "country": "Paese",
+    "postal_code": "Codice postale",
+    "aknowledgements_information": "Indirizzo per i ringraziamenti",
+    "message_information": "Il vostro messaggio",
+    "message": "Messaggio",
+    "required": "Campo obbligatorio",
+    "processing": "Elaborazione in corso...",
+    "success": "Grazie del vostro regalo!",
+    "failure": "Errore durante l'elaborazione della riservazione",
     "errors": {
-        "home": "Homepage",
-        "home-message": "Ritorno alla homepage",
-        "back": "Indietro",
-        "404": {
-            "title": "Pagina non trovata",
-            "description": "La pagina che cercate non esiste.",
-            "language": "La lingua richiesta non esiste."
-        },
-        "enter_valid_amount": "Per favore indicare una quantità valida",
-        "amount_exceeds_remaining": "La quantità scelta supera quella rimanente"
-    },
-    "checkout": {
-        "modal_title": "Grazie di cuore per il vostro regalo!",
-        "modal_description": "Ecco come potete mandarci il regalo:",
-        "modal_text": "Potete versarci i soldi sul conto bancario oppure mandarceli via TWINT.",
-        "modal_payment": "Metodo di pagamento",
-        "confirm": "Confermare il regalo",
-        "order_information": "Informazioni sul carrello",
-        "order_summary": "Riassunto del carrello",
-        "quantity": "Quantità:",
-        "total": "Totale",
-        "personal_information": "Informazioni personali",
-        "email": "Indirizzo e-mail",
-        "first_name": "Nome",
-        "last_name": "Cognome",
-        "address": "Indirizzo",
-        "city": "Città",
-        "country": "Paese",
-        "postal_code": "Codice postale",
-        "aknowledgements_information": "Indirizzo per i ringraziamenti",
-        "message_information": "Il vostro messaggio",
-        "message": "Messaggio",
-        "required": "Campo obbligatorio",
-        "processing": "Elaborazione in corso...",
-        "success": "Grazie del vostro regalo!",
-        "failure": "Errore durante l'elaborazione della riservazione",
-        "errors": {
-            "incomplete_informations": "Informazioni personali incorrette",
-            "fill_field": "Per favore riempire questo campo",
-            "fill_first_name": "Per favore riempire il nome",
-            "fill_last_name": "Per favore riempire il cognome",
-            "fill_email": "Per favore riempire l'indirizzo e-mail",
-            "invalid_email": "Indirizzo e-mail invalido"
-        }
-    },
-    "utils": {
-        "close": "Chiudere",
-        "back": "Ritorno"
+      "incomplete_informations": "Informazioni personali incorrette",
+      "fill_field": "Per favore riempire questo campo",
+      "fill_first_name": "Per favore riempire il nome",
+      "fill_last_name": "Per favore riempire il cognome",
+      "fill_email": "Per favore riempire l'indirizzo e-mail",
+      "invalid_email": "Indirizzo e-mail invalido"
     }
+  },
+  "utils": {
+    "close": "Chiudere",
+    "back": "Ritorno"
+  }
 }

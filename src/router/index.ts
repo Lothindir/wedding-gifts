@@ -36,22 +36,42 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: () => import('@/views/AdminView.vue'),
+      beforeEnter: () => {
+        if (!import.meta.env.DEV) {
+          router.push({ name: 'not-found' })
+        }
+      },
     },
     {
       path: '/admin/gifts',
       name: 'admin-gifts',
       component: () => import('@/views/admin/AdminGiftsView.vue'),
+      beforeEnter: () => {
+        if (!import.meta.env.DEV) {
+          router.push({ name: 'not-found' })
+        }
+      },
     },
     {
       path: '/admin/gifts/:id',
       name: 'admin-edit-gift',
       component: () => import('@/views/admin/AdminEditGiftView.vue'),
+      beforeEnter: () => {
+        if (!import.meta.env.DEV) {
+          router.push({ name: 'not-found' })
+        }
+      },
       props: true,
     },
     {
       path: '/admin/gifts/add',
       name: 'admin-add-gift',
       component: () => import('@/views/admin/AdminAddGiftView.vue'),
+      beforeEnter: () => {
+        if (!import.meta.env.DEV) {
+          router.push({ name: 'not-found' })
+        }
+      },
     },
     {
       path: '/:pathMatch(.*)*',
