@@ -6,11 +6,6 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'gifts',
-      component: GiftsView,
-    },
-    {
       path: '/:lang([a-z]{2})',
       component: GiftsView,
       beforeEnter: (to) => {
@@ -23,9 +18,16 @@ const router = createRouter({
         } else {
           const localeId = localeArray.findIndex((l) => l == futureLocale)
           i18n.global.locale = i18n.global.availableLocales[localeId]
+          console.log(i18n.global.locale)
+
           router.push('/')
         }
       },
+    },
+    {
+      path: '/',
+      name: 'gifts',
+      component: GiftsView,
     },
     {
       path: '/checkout',
