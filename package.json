@@ -51,10 +51,5 @@
     "vite": "^5.3.3",
     "vite-plugin-vue-devtools": "^7.3.5",
     "vue-tsc": "^2.0.26"
-  },
-  "pnpm": {
-    "overrides": {
-      "vue-template-compiler@>=2.0.0 <3.0.0": ">=3.0.0"
-    }
   }
 }
