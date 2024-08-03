@@ -7,7 +7,7 @@
     </div>
     <div class="mt-4 flex justify-between">
       <div>
-        <h3 class="text-sm text-gray-700">{{ title }}</h3>
+        <h3 class="text-base text-gray-700">{{ title }}</h3>
         <p class="mt-1 text-sm text-justify text-gray-500">
           {{ description }}
         </p>

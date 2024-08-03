@@ -6,16 +6,36 @@
         <h2 class="text-2xl font-bold tracking-tight text-gray-900">
           {{ t('wedding.gift_list') }}
         </h2>
-        <p class="mt-2 text-sm py-2 text-gray-700">{{ t('wedding.gift_list_description') }}
+        <p class="mt-2 text-sm py-2 text-gray-700">
+          {{ t('wedding.gift_list_description') }}
           <FaceSmileIcon class="inline w-6 h-6" />
         </p>
-        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          <GiftItem v-for="gift in gifts" :key="gift.id!" :title="gift.title!" :img="gift.image!" :alt="gift.title"
-            :description="gift.description!">
-            <GiftPrice :total-price="gift.price!" :gifted-amount="gift.amount_gifted" v-if="gift.parts == 0"
-              :giftable="true" @contribute="contribute(gift.id!)" />
-            <GiftParts :total-parts="gift.parts!" :gifted-parts="gift.amount_gifted" :part-price="gift.price!" v-else
-              :giftable="true" @contribute="contribute(gift.id!)" />
+        <div
+          class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+        >
+          <GiftItem
+            v-for="gift in gifts"
+            :key="gift.id!"
+            :title="gift.title!"
+            :img="gift.image!"
+            :alt="gift.title"
+            :description="gift.description!"
+          >
+            <GiftPrice
+              :total-price="gift.price!"
+              :gifted-amount="gift.amount_gifted"
+              v-if="gift.parts == 0"
+              :giftable="true"
+              @contribute="contribute(gift.id!)"
+            />
+            <GiftParts
+              :total-parts="gift.parts!"
+              :gifted-parts="gift.amount_gifted"
+              :part-price="gift.price!"
+              v-else
+              :giftable="true"
+              @contribute="contribute(gift.id!)"
+            />
           </GiftItem>
         </div>
 

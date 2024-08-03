@@ -24,7 +24,7 @@
 
             <ul role="list" class="divide-y divide-gray-200 text-sm font-medium text-gray-900">
               <li
-                class="flex items-start space-x-4 py-6"
+                class="flex items-start space-x-2 sm:space-x-4 py-6"
                 v-for="gift in cartStore.getCart()"
                 :key="gift.id"
               >
@@ -34,12 +34,12 @@
                   class="h-20 w-20 flex-none rounded-md object-cover object-center"
                 />
                 <div class="flex-auto space-y-1 mt-4 relative">
-                  <h3>{{ gift.title }}</h3>
+                  <h3 class="pr-6">{{ gift.title }}</h3>
                   <p class="text-gray-500" v-if="gift.mode == 'parts'">
                     {{ t('checkout.quantity') + ' ' + gift.quantity }}
                   </p>
                   <TrashIcon
-                    class="w-6 text-gray-700 absolute inset-y-0 right-0 hover:cursor-pointer"
+                    class="w-5 sm:w-6 text-gray-700 absolute inset-y-0 right-0 hover:cursor-pointer"
                     @click="deleteItem(gift.id)"
                   />
                 </div>
@@ -49,7 +49,7 @@
               </li>
             </ul>
 
-            <dl class="hidden space-y-6 border-t border-gray-200 pt-6 text-gray-900 lg:block">
+            <dl class="space-y-6 border-t border-gray-200 pt-6 text-gray-900 lg:block">
               <div class="flex items-center justify-between">
                 <dt class="text-xl">{{ t('checkout.total') }}</dt>
                 <dd class="text-xl">{{ settingsStore.currency + ' ' + cartStore.total() }}</dd>

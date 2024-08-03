@@ -41,14 +41,14 @@ giftsStore.loadGiftsTranslations(locale.value)
       <img :src="logoWhite" class="my-1 ml-1 h-12 w-12" alt="Logo" />
       <h1 class="text-2xl font-bold py-4 pl-1">{{ t('wedding.title') }} Katja & Francesco</h1>
     </RouterLink>
-    <div class="flex">
+    <div class="flex sm:flex-row flex-col-reverse justify-center">
       <CartIcon />
-      <div class="locale-changer ml-8 mr-2 mt-2 flex">
+      <div class="locale-changer ml-2 sm:ml-8 mr-2 sm:mt-2 flex pb-2 sm:pb-0">
         <select
           id="locale"
           name="locale"
           v-model="$i18n.locale"
-          class="my-auto mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          class="my-auto mt-2 block w-20 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 sm:w-full"
         >
           <option
             v-for="locale in $i18n.availableLocales"
