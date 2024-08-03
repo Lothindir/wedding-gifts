@@ -38,7 +38,7 @@
                   @click="open = false"
                 >
                   <span class="sr-only">{{ t('utils.close') }}</span>
-                  <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon class="h-12 w-12 sm:h-6 sm:w-6" aria-hidden="true" />
                 </button>
 
                 <div
@@ -139,14 +139,14 @@
                           <button
                             type="submit"
                             @click.prevent="addToCart(false)"
-                            class="items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                            class="items-center justify-center rounded-md border border-transparent bg-indigo-600 px-2 sm:px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                           >
                             {{ t('gift.add_to_cart_checkout') }}
                           </button>
                           <button
                             type="submit"
                             @click.prevent="addToCart(true)"
-                            class="w-full items-center justify-center rounded-md border border-transparent bg-gray-200 px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                            class="w-full items-center justify-center rounded-md border border-transparent bg-gray-200 px-2 sm:px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
                           >
                             {{ t('gift.add_to_cart_continue') }}
                           </button>
