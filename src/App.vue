@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, defineComponent, h } from 'vue'
 import { RouterView } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { i18n, loadLocaleMessages } from './utils/i18n'
 
 import { useSettingsStore } from '@/stores/settings'
 import { useGiftsStore } from '@/stores/gifts'
@@ -15,7 +13,6 @@ import CartIcon from '@/components/CartIcon.vue'
 
 useRecaptchaProvider()
 const { t, locale } = useI18n()
-// const selectedLocale = ref<string>(i18n.global.locale)
 const settingsStore = useSettingsStore()
 const giftsStore = useGiftsStore()
 const devMode = import.meta.env.DEV
@@ -23,16 +20,6 @@ const devMode = import.meta.env.DEV
 settingsStore.loadSettings()
 giftsStore.loadGifts()
 giftsStore.loadGiftsTranslations(locale.value)
-
-// async function changeLocale() {
-//   await loadLocaleMessages(i18n, selectedLocale.value)
-// }
-
-// onMounted(async () => {
-//   await settingsStore.loadSettings()
-//   if (settingsStore.languages_default && settingsStore.languages_default !== i18n.global.locale)
-//     selectedLocale.value = settingsStore.languages_default
-// })
 </script>
 
 <template>
@@ -58,13 +45,6 @@ giftsStore.loadGiftsTranslations(locale.value)
             {{ locale }}
           </option>
         </select>
-        <!-- <select id="locale" name="locale" @change="changeLocale()" v-model="selectedLocale"
-        class="my-auto mt-2 block w-full rounded-md border-0 py-1.5 px-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        <option v-for="locale in settingsStore.languages" :key="`locale-${locale}`" :value="locale"
-          :selected="locale == settingsStore.languages_default">
-          {{ locale }}
-        </option>
-      </select> -->
       </div>
     </div>
   </header>

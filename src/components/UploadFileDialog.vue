@@ -205,13 +205,11 @@ interface HTMLInputEvent extends Event {
 
 import { onMounted, ref, computed } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { useI18n } from 'vue-i18n'
 import { useToast } from 'vue-toast-notification'
 import { supabase } from '@/database/supabase'
 import { LinkIcon, PhotoIcon } from '@heroicons/vue/20/solid'
 import { DocumentArrowUpIcon } from '@heroicons/vue/24/solid'
 
-const { t } = useI18n()
 const toast = useToast()
 const activeTab = ref(0)
 const file = ref<File | null>(null)
