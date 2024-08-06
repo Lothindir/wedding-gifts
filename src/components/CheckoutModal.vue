@@ -53,7 +53,7 @@
                 {{ t('gift.amount_gifted') }} : {{ props.amountGifted }}
                 {{ settingsStore.currency }}
               </div>
-              <div class="mt-6 border-t border-gray-200 pt-6">
+              <div class="mt-6 border-t border-gray-200 pt-6" v-if="selectedPaymentMethod">
                 <fieldset>
                   <legend class="text-lg font-medium text-gray-900">
                     {{ t('checkout.modal_payment') }}
@@ -92,7 +92,7 @@
                   </RadioGroup>
                 </fieldset>
               </div>
-              <div class="text-sm text-gray-700 mt-2">
+              <div class="text-sm text-gray-700 mt-2" v-if="selectedPaymentMethod">
                 <div class="flex flex-col align-middle">
                   <div
                     class="flex justify-center my-1"
