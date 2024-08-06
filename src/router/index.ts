@@ -1,4 +1,4 @@
-import { RouterView, createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import GiftsView from '@/views/GiftsView.vue'
 import { i18n } from '@/utils/i18n'
 
@@ -14,13 +14,13 @@ const router = createRouter({
 
         if (!localeArray.includes(futureLocale)) {
           // i18n.global.locale.value = i18n.global.fallbackLocale.value
-          router.push({ name: 'not-found', params: { pathMatch: 'unknown locale' } })
+          return { name: 'not-found', params: { pathMatch: 'unknown locale' } }
         } else {
           const localeId = localeArray.findIndex((l) => l == futureLocale)
-          i18n.global.locale = i18n.global.availableLocales[localeId]
-          console.log(i18n.global.locale)
+          // i18n.global.locale = i18n.global.availableLocales[localeId]
+          // loadLocaleMessages(i18n, i18n.global.locale)
 
-          router.push('/')
+          return { name: 'gifts', query: { lang: i18n.global.availableLocales[localeId] } }
         }
       },
     },

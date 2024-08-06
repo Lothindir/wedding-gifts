@@ -46,10 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Tables } from '@/database/database.types'
-
 import { useI18n } from 'vue-i18n'
-import { supabase } from '@/database/supabase'
 import { ref, onMounted, watch } from 'vue'
 import GiftItem from '@/components/GiftItem.vue'
 import GiftPrice from '@/components/GiftPrice.vue'
@@ -59,12 +56,13 @@ import bannerUrl from '@/assets/images/banner.jpg'
 import { FaceSmileIcon } from '@heroicons/vue/24/outline'
 import { useGiftsStore } from '@/stores/gifts'
 import { storeToRefs } from 'pinia'
+import { useRoute } from 'vue-router'
 
-// const gifts = ref<Tables<'gifts_visible'>[]>([])
 const openModal = ref(false)
 const giftId = ref<number>(-1)
 const { locale, t } = useI18n()
 const giftsStore = useGiftsStore()
+const route = useRoute()
 const { giftsTranslations: gifts } = storeToRefs(giftsStore)
 
 watch(locale, async () => {
@@ -78,6 +76,10 @@ function contribute(id: number) {
 }
 
 onMounted(() => {
+  if (route.query.lang) {
+    locale.value = route.query.lang as string
+    history.replaceState({}, '', '/')
+  }
   gifts.value = giftsStore.giftsTranslations
 })
 </script>

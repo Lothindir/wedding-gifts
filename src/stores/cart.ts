@@ -93,6 +93,8 @@ export const useCartStore = defineStore('cart', () => {
         purchaser.country,
     }
 
+    const amount_gifted = total()
+
     emailjs
       .send(
         'contact_katjafrancesco',
@@ -101,7 +103,7 @@ export const useCartStore = defineStore('cart', () => {
           first_name: purchaser.name,
           last_name: purchaser.surname,
           to_email: purchaser.email,
-          amount_gifted: total(),
+          amount_gifted: amount_gifted,
         },
         { publicKey: import.meta.env.VITE_EMAILJS_PK }
       )
@@ -112,7 +114,7 @@ export const useCartStore = defineStore('cart', () => {
           'registry_checkout_error',
           {
             full_name: purchaser.name + ' ' + purchaser.surname,
-            amount_gifted: total(),
+            amount_gifted: amount_gifted,
             to_email: purchaser.email,
             error: err.message,
           },
