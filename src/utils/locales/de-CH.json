@@ -45,7 +45,7 @@
   "checkout": {
     "modal_title": "Vielen Dank für euer Geschenk !",
     "modal_description": "So könnt ihr es uns konkret schenken :",
-    "modal_text": "Ihr könnt uns das Geld auf unser Bankkonto überweisen, oder es uns via TWINT schicken.",
+    "modal_text": "Sie erhalten eine E-Mail mit den Informationen, wie Sie uns das Geld geben können. Wir werden uns selbst um den Kauf des Geschenks kümmern.",
     "modal_payment": "Zahlarten",
     "confirm": "Ihr Geschenk bestätigen",
     "order_information": "Informationen Warenkorb",
