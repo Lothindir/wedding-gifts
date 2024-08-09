@@ -13,7 +13,7 @@ import { useRouter } from 'vue-router'
 import { supabase } from '@/database/supabase'
 import { ref, onMounted } from 'vue'
 import type { Tables, TablesInsert } from '@/database/database.types'
-import GiftForm from '@/components/GiftForm.vue'
+import GiftForm from '@/components/admin/GiftForm.vue'
 
 const props = defineProps<{
   id: number

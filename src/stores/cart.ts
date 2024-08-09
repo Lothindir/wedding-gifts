@@ -95,32 +95,34 @@ export const useCartStore = defineStore('cart', () => {
 
     const amount_gifted = total()
 
-    emailjs
-      .send(
-        'contact_katjafrancesco',
-        'gift_confirmation_' + locale,
-        {
-          first_name: purchaser.name,
-          last_name: purchaser.surname,
-          to_email: purchaser.email,
-          amount_gifted: amount_gifted,
-        },
-        { publicKey: import.meta.env.VITE_EMAILJS_PK }
-      )
-      .catch((err) => {
-        console.error('EmailJS error:', err)
-        emailjs.send(
+    if (!import.meta.env.DEV) {
+      emailjs
+        .send(
           'contact_katjafrancesco',
-          'registry_checkout_error',
+          'gift_confirmation_' + locale,
           {
-            full_name: purchaser.name + ' ' + purchaser.surname,
-            amount_gifted: amount_gifted,
+            first_name: purchaser.name,
+            last_name: purchaser.surname,
             to_email: purchaser.email,
-            error: err.message,
+            amount_gifted: amount_gifted,
           },
           { publicKey: import.meta.env.VITE_EMAILJS_PK }
         )
-      })
+        .catch((err) => {
+          console.error('EmailJS error:', err)
+          emailjs.send(
+            'contact_katjafrancesco',
+            'registry_checkout_error',
+            {
+              full_name: purchaser.name + ' ' + purchaser.surname,
+              amount_gifted: amount_gifted,
+              to_email: purchaser.email,
+              error: err.message,
+            },
+            { publicKey: import.meta.env.VITE_EMAILJS_PK }
+          )
+        })
+    }
 
     const donor_res = await supabase.from('donors').insert(donor).select('id').single()
 

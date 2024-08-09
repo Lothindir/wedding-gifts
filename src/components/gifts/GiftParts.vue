@@ -21,11 +21,7 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable" />
     <div class="flex justify-center">
-      <ContributeButton
-        :active="isGiftable"
-        @contribute="$emit('contribute')"
-        v-if="props.giftable"
-      />
+      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
     </div>
   </div>
 </template>
@@ -34,7 +30,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useSettingsStore } from '@/stores/settings'
-import ContributeButton from '@/components/ContributeButton.vue'
+import ContributeButton from '@/components/gifts/ContributeButton.vue'
 
 const props = defineProps<{
   totalParts: number

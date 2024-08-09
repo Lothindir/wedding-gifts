@@ -265,7 +265,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { TrashIcon } from '@heroicons/vue/20/solid'
-import CheckoutModal from '@/components/CheckoutModal.vue'
+import CheckoutModal from '@/components/checkout/CheckoutModal.vue'
 import { useCartStore, type Purchaser } from '@/stores/cart'
 import { useGiftsStore } from '@/stores/gifts'
 import { useSettingsStore } from '@/stores/settings'
