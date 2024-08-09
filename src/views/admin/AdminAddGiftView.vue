@@ -12,7 +12,7 @@ import { useToast } from 'vue-toast-notification'
 import { useRouter } from 'vue-router'
 import { supabase } from '@/database/supabase'
 import { ref } from 'vue'
-import GiftForm from '@/components/GiftForm.vue'
+import GiftForm from '@/components/admin/GiftForm.vue'
 
 import type { TablesInsert } from '@/database/database.types'
 

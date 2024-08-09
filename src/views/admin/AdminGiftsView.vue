@@ -110,7 +110,7 @@ import { supabase } from '@/database/supabase'
 import { useI18n } from 'vue-i18n'
 import type { Tables } from '@/database/database.types'
 import { useToast } from 'vue-toast-notification'
-import CriticalDialog from '@/components/CriticalDialog.vue'
+import CriticalDialog from '@/components/admin/CriticalDialog.vue'
 
 const gifts = ref<Tables<'all_gifts'>[]>([])
 const toast = useToast()

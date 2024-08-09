@@ -12,11 +12,7 @@
     </div>
     <hr class="mt-4 bg-black border-1" v-if="isGiftable && !isFreeParticipation" />
     <div class="flex justify-center bottom-0">
-      <ContributeButton
-        :active="isGiftable"
-        @contribute="$emit('contribute')"
-        v-if="props.giftable"
-      />
+      <ContributeButton :active="isGiftable" @contribute="$emit('contribute')" v-if="props.giftable" />
     </div>
   </div>
 </template>
@@ -26,7 +22,7 @@ import { computed } from 'vue'
 import { useSettingsStore } from '@/stores/settings'
 import { useI18n } from 'vue-i18n'
 import { storeToRefs } from 'pinia'
-import ContributeButton from '@/components/ContributeButton.vue'
+import ContributeButton from '@/components/gifts/ContributeButton.vue'
 
 const props = defineProps<{
   totalPrice: number
