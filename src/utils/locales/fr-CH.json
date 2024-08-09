@@ -45,7 +45,7 @@
   "checkout": {
     "modal_title": "Merci beaucoup pour votre cadeau !",
     "modal_description": "Voici comment nous l'offrir concrètement :",
-    "modal_text": "Vous pouvez soit nous verser l'argent sur notre compte bancaire, soit nous l'envoyer via TWINT.",
+    "modal_text": "Vous allez recevoir un email avec les informations pour nous donner l'argent. Nous allons nous occuper d'acheter le cadeau offert nous mêmes.",
     "modal_payment": "Moyen de paiement",
     "confirm": "Confirmer votre cadeau",
     "order_information": "Informations sur le panier",

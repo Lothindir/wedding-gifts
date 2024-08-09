@@ -44,8 +44,8 @@
   },
   "checkout": {
     "modal_title": "Grazie di cuore per il vostro regalo!",
-    "modal_description": "Ecco come potete mandarci il regalo:",
-    "modal_text": "Potete versarci i soldi sul conto bancario oppure mandarceli via TWINT.",
+    "modal_description": "Ecco come potete offrirci il regalo:",
+    "modal_text": "Riceverete un'e-mail con le informazioni per darci i soldi. Ci occuperemo noi stessi dell'acquisto del regalo.",
     "modal_payment": "Metodo di pagamento",
     "confirm": "Confermare il regalo",
     "order_information": "Informazioni sul carrello",
