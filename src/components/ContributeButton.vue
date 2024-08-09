@@ -7,7 +7,7 @@
     <GiftIcon></GiftIcon>
     {{ t('gift.contribute') }}
   </button>
-  <div class="center text-md font-bold text-green-600 mt-4 px-2 py-1" v-else>
+  <div class="disable center text-md font-bold text-green-600 mt-4 px-2 py-1" disabled v-else>
     <CheckIcon> </CheckIcon>{{ t('gift.already_contributed') }}
   </div>
 </template>

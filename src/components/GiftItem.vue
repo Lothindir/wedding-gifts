@@ -1,11 +1,13 @@
 <template>
-  <div class="group relative bg-white p-4 rounded-xl flex flex-col justify-between">
+  <div
+    class="group relative bg-white p-4 rounded-xl flex flex-col justify-between has-[.disable]:bg-gray-200"
+  >
     <div
-      class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60"
+      class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-60 group-has-[.disable]:opacity-30"
     >
       <img :src="img" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
     </div>
-    <div class="mt-4 flex justify-between">
+    <div class="mt-4 flex justify-between group-has-[.disable]:opacity-50">
       <div>
         <h3 class="text-base text-gray-700">{{ title }}</h3>
         <p class="mt-1 text-sm text-justify text-gray-500">
